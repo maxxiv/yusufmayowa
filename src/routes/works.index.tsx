@@ -7,7 +7,7 @@ const title = "Works — Yusuf Mayowa";
 const description =
   "Fifteen selected projects: brand identity systems, packaging and websites for founders across Nigeria, the UK and the US.";
 
-export const Route = createFileRoute("/works")({
+export const Route = createFileRoute("/works/")({
   head: () => ({
     meta: [
       { title },
