@@ -49,7 +49,7 @@ function Hero() {
 
       <h1
         id="hero-heading"
-        className="mx-auto mt-6 max-w-[16ch] font-display text-[clamp(2.6rem,8.2vw,5.75rem)] leading-[1.04] font-bold"
+        className="mx-auto mt-6 max-w-[15ch] font-display text-[clamp(2.5rem,7vw,4.75rem)] leading-[1.05] font-bold sm:max-w-5xl"
       >
         <motion.span {...line(0.16)} className="block">
           Using <span className="text-accent">Design</span> to connect
