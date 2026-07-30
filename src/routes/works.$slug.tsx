@@ -222,7 +222,7 @@ function CaseStudy() {
               Results
             </h2>
             <dl className="mt-12 grid gap-10 sm:grid-cols-3">
-              {cs.results.map((r) => (
+              {cs.results.map((r: { label: string; value: string }) => (
                 <div key={r.label} className="text-center">
                   <dt className="order-2 mt-2 text-sm text-paper/50">{r.label}</dt>
                   <dd className="font-display text-[clamp(2.25rem,6vw,3.5rem)] leading-none">
