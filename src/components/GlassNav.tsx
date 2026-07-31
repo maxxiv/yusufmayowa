@@ -40,14 +40,14 @@ export function GlassNav() {
   return (
     <>
       <header
-        className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4 sm:pt-6"
+        className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-5 sm:pt-7"
         style={{ transition: "padding 400ms cubic-bezier(0.16,1,0.3,1)" }}
       >
         <nav
           aria-label="Primary"
-          className="glass flex w-full max-w-3xl items-center justify-between rounded-full"
+          className="glass pointer-events-auto flex w-full max-w-3xl items-center justify-between rounded-full"
           style={{
-            padding: scrolled ? "0.4rem 0.4rem 0.4rem 1.1rem" : "0.55rem 0.55rem 0.55rem 1.4rem",
+            padding: scrolled ? "0.5rem 0.5rem 0.5rem 1.1rem" : "0.7rem 0.7rem 0.7rem 1.4rem",
             transform: scrolled ? "scale(0.965)" : "scale(1)",
             backgroundColor: scrolled ? "oklch(1 0 0 / 0.74)" : "oklch(1 0 0 / 0.58)",
             transition: "all 450ms cubic-bezier(0.16,1,0.3,1)",
@@ -79,19 +79,27 @@ export function GlassNav() {
               to="/contact"
               className="hidden rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-paper transition-transform duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.03] active:scale-[0.97] md:inline-flex"
             >
-              Contact
+              Work with me
             </Link>
             <button
               type="button"
-              onClick={() => setOpen(true)}
-              aria-label="Open menu"
+              onClick={() => setOpen((o) => !o)}
+              aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               className="grid size-11 place-items-center rounded-full bg-ink text-paper transition-transform duration-200 active:scale-95 md:hidden"
             >
               <span className="sr-only">Menu</span>
-              <span aria-hidden className="flex flex-col gap-[5px]">
-                <span className="block h-px w-4 bg-current" />
-                <span className="block h-px w-4 bg-current" />
+              <span aria-hidden className="relative grid size-4 place-items-center">
+                <span
+                  className={`absolute h-px w-4 bg-current transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                    open ? "rotate-45" : "-translate-y-[3px]"
+                  }`}
+                />
+                <span
+                  className={`absolute h-px w-4 bg-current transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                    open ? "-rotate-45" : "translate-y-[3px]"
+                  }`}
+                />
               </span>
             </button>
           </div>
@@ -100,67 +108,46 @@ export function GlassNav() {
 
       <AnimatePresence>
         {open && (
-          <motion.div
-            className="fixed inset-0 z-[60] md:hidden"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: reduced ? 0 : 0.3, ease: EASE }}
-          >
-            <button
+          <div className="fixed inset-0 z-[60] md:hidden">
+            <motion.button
               type="button"
               aria-label="Close menu"
               onClick={() => setOpen(false)}
-              className="absolute inset-0 h-full w-full cursor-default bg-paper/40"
+              className="absolute inset-0 h-full w-full cursor-default bg-ink/10"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: reduced ? 0 : 0.2, ease: EASE }}
             />
             <motion.div
               role="dialog"
               aria-modal="true"
               aria-label="Site menu"
-              className="glass absolute inset-3 flex flex-col rounded-[2rem] p-6"
-              initial={{ scale: reduced ? 1 : 0.97, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: reduced ? 1 : 0.98, opacity: 0 }}
-              transition={{ duration: reduced ? 0 : 0.45, ease: EASE }}
+              className="glass absolute top-[5.25rem] inset-x-4 flex flex-col rounded-[1.75rem] p-7 sm:top-[5.75rem] sm:inset-x-6"
+              style={{ transformOrigin: "top right" }}
+              initial={{ scale: reduced ? 1 : 0.94, opacity: 0, y: reduced ? 0 : -8 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: reduced ? 1 : 0.96, opacity: 0, y: reduced ? 0 : -6 }}
+              transition={{ duration: reduced ? 0 : 0.24, ease: EASE }}
             >
-              <div className="flex items-center justify-between">
-                <span className="text-[0.78rem] font-semibold tracking-[0.14em] uppercase">
-                  {site.name}.
-                </span>
-                <button
-                  type="button"
-                  onClick={() => setOpen(false)}
-                  aria-label="Close menu"
-                  className="grid size-11 place-items-center rounded-full bg-ink/5 text-ink transition-colors hover:bg-ink/10"
-                >
-                  <svg viewBox="0 0 16 16" className="size-4" aria-hidden fill="none">
-                    <path d="M2 2l12 12M14 2L2 14" stroke="currentColor" strokeWidth="1.4" />
-                  </svg>
-                </button>
-              </div>
-
               <motion.ul
-                className="mt-14 flex flex-col gap-2"
+                className="flex flex-col gap-1"
                 initial="hidden"
                 animate="show"
-                variants={{ show: { transition: { staggerChildren: 0.06, delayChildren: 0.1 } } }}
+                variants={{ show: { transition: { staggerChildren: 0.03 } } }}
               >
-                {[...links, { label: "Contact", to: "/contact" as const }].map((l) => (
+                {links.map((l) => (
                   <motion.li
                     key={l.to}
                     variants={{
-                      hidden: { opacity: 0, y: reduced ? 0 : 14, filter: "blur(6px)" },
-                      show: {
-                        opacity: 1,
-                        y: 0,
-                        filter: "blur(0px)",
-                        transition: { duration: 0.5, ease: EASE },
-                      },
+                      hidden: { opacity: 0, y: reduced ? 0 : 8 },
+                      show: { opacity: 1, y: 0, transition: { duration: 0.2, ease: EASE } },
                     }}
                   >
                     <Link
                       to={l.to}
-                      className="block py-3 font-display text-4xl tracking-[-0.03em] text-ink"
+                      onClick={() => setOpen(false)}
+                      className="block rounded-xl px-2 py-4 font-display text-2xl tracking-[-0.02em] text-ink transition-colors hover:bg-ink/5"
                       activeProps={{ className: "text-accent" }}
                       activeOptions={{ exact: l.to === "/" }}
                     >
@@ -170,21 +157,39 @@ export function GlassNav() {
                 ))}
               </motion.ul>
 
-              <div className="mt-auto flex flex-wrap gap-x-6 gap-y-2 border-t border-ink/10 pt-6">
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: reduced ? 0 : 8 },
+                  show: { opacity: 1, y: 0, transition: { duration: 0.2, ease: EASE } },
+                }}
+                initial="hidden"
+                animate="show"
+                className="mt-6"
+              >
+                <Link
+                  to="/contact"
+                  onClick={() => setOpen(false)}
+                  className="flex min-h-14 w-full items-center justify-center rounded-full bg-ink text-base font-medium text-paper transition-transform duration-200 active:scale-[0.97]"
+                >
+                  Work with me
+                </Link>
+              </motion.div>
+
+              <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 border-t border-ink/10 pt-4">
                 {site.socials.map((s) => (
                   <a
                     key={s.label}
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="link-quiet py-2 text-sm text-ink-soft"
+                    className="link-quiet py-1 text-xs text-ink-soft"
                   >
                     {s.label}
                   </a>
                 ))}
               </div>
             </motion.div>
-          </motion.div>
+          </div>
         )}
       </AnimatePresence>
     </>

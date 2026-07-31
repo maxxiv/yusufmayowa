@@ -20,6 +20,14 @@ dist-ssr
 .wrangler/
 .dev.vars
 
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Archived prior Next.js build (not part of this project)
+_archive-nextjs/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

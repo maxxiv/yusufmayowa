@@ -5,69 +5,70 @@ export const site = {
   phone: "+234 901 709 2973",
   location: "Lagos, Nigeria",
   socials: [
-    { label: "Instagram", href: "https://instagram.com/" },
-    { label: "LinkedIn", href: "https://linkedin.com/" },
-    { label: "Behance", href: "https://behance.net/" },
-    { label: "Github", href: "https://github.com/" },
+    { label: "Instagram", href: "https://www.instagram.com/yusufmayowa_com" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/dauda-yusuf-mayowa" },
+    { label: "Twitter", href: "https://x.com/yusufmayowa_com" },
+    { label: "Behance", href: "https://www.behance.net/mayowayusuf" },
   ],
 };
 
 export const testimonials = [
   {
     quote:
-      "Yusuf asked harder questions than anyone we'd worked with. He spent a week talking to our customers before he showed us anything, and the positioning line he came back with is still the first sentence on our homepage.",
-    name: "Adigun A.",
-    role: "Founder, GeoWyse Consult",
+      "Working across time zones, I never once felt out of the loop. Every update landed exactly when he said it would.",
+    name: "Hannah G.",
+    role: "Co-Founder, Iconic Resourcing",
+    flag: "🇬🇧",
+    country: "United Kingdom",
   },
   {
     quote:
-      "We came to him for a logo and left with a system our team can actually run. Nine product launches later, we haven't needed to call a designer once.",
-    name: "Ifeoma N.",
-    role: "Operations Lead, Terra Roast",
+      "He photographed the chairs before he designed anything, which told me he actually cared about the wood.",
+    name: "Stone G.",
+    role: "Co-Founder, Alder & Stone",
+    flag: "🇦🇺",
+    country: "Australia",
+  },
+  {
+    quote: "He understood the food before he touched the logo. Most designers skip that part.",
+    name: "Ayomide",
+    role: "Founder, Amala On The Go",
+    flag: "🇨🇦",
+    country: "Canada",
   },
   {
     quote:
-      "He pushed back on half of what we asked for, and he was right about most of it. The brand looks older and more established than the company is, which is exactly what we needed going into the raise.",
-    name: "Daniel O.",
-    role: "CEO, Inpay Technologies",
+      "Clients see the logo before they see a single room we've styled, and it already tells them what kind of studio we are.",
+    name: "Maya",
+    role: "Founder, Maya Luxe Homes",
+    flag: "🇳🇬",
+    country: "Nigeria",
   },
   {
     quote:
-      "Two days in our workshop before a single sketch. The packaging he designed sells the labour behind the furniture better than I ever managed to explain it.",
-    name: "Tunde B.",
-    role: "Founder, Kanju Furniture",
-  },
-  {
-    quote:
-      "Calm, fast, and honest about timelines. Everything arrived when he said it would, in formats our print partner didn't have to question.",
-    name: "Zainab K.",
-    role: "Brand Manager, Olori Botanics",
+      "Customers ask about the tag before they ask the price. That's not normal for a brand our size.",
+    name: "Okeowo A.",
+    role: "Founder, Okeowo Threads",
+    flag: "🇳🇬",
+    country: "Nigeria",
   },
 ];
 
 export const faqs = [
   {
-    q: "How do you price projects?",
-    a: "Fixed price per project, quoted after a short scoping call — never hourly. A full identity typically sits between ₦1.2M and ₦3.5M depending on how many applications you need; a website is quoted separately. You get the full number and the payment schedule before anything starts, and it doesn't move unless the scope does.",
+    q: "What do you design?",
+    a: "I design brand identities and websites for businesses that want a stronger, more professional presence both online and offline.",
   },
   {
     q: "How long does a project take?",
-    a: "A brand identity runs four to seven weeks. A website runs three to six weeks, and can overlap with the identity if we're doing both. Those timelines assume feedback within two working days at each review — if that slips, the schedule moves with it, and I'll tell you when it does.",
+    a: "Most branding projects take around 4 to 6 weeks, while websites usually take 3 to 5 weeks depending on the scope.",
   },
   {
-    q: "What does the process actually look like?",
-    a: "Four stages: discovery (customer calls, competitor review, positioning), direction (one route, presented in context, not three logos on a white slide), build (the full system and applications), and handover (files, guidelines, and a walkthrough call). You see work at the end of each stage, not just at the finish.",
+    q: "Do you work with international clients?",
+    a: "Yes. I work with businesses across Nigeria and internationally through online meetings and collaborative tools.",
   },
   {
-    q: "Do you work with businesses outside Nigeria?",
-    a: "Yes — roughly half of my work is with founders in the UK, US, and across Africa. Everything runs over calls and shared documents, and I keep two hours of overlap with your working day. Time zone has never been the problem; slow feedback is.",
-  },
-  {
-    q: "What do I get at the end?",
-    a: "Source files, exports in every format you'll realistically need, and a guidelines document written for the people who'll use it — usually a marketing hire, not a designer. Plus a recorded walkthrough so you're not reading a PDF cold six months later.",
-  },
-  {
-    q: "Are you taking new projects?",
-    a: "I take a small number at a time so nothing gets rushed. Send a note with what you're building and when you need it live, and I'll tell you honestly whether I can do it well in that window.",
+    q: "How do we get started?",
+    a: "Simply send me a message with a little information about your project. I'll review it and get back to you with the next steps.",
   },
 ];

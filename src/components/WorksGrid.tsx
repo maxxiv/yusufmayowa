@@ -3,38 +3,51 @@ import { useMemo, useRef, useState } from "react";
 import { EASE } from "./Reveal";
 import { ProjectCard } from "./ProjectCard";
 import { ExternalLinkDialog } from "./ExternalLinkDialog";
-import { projects, type Category, type Project } from "@/data/projects";
+import {
+  featuredBrandingProjects,
+  featuredWebsiteProjects,
+  spotlightBrandingProjects,
+  spotlightWebsiteProjects,
+  getFeaturedProjects,
+  getSpotlightProjects,
+  type Category,
+  type Project,
+} from "@/data/projects";
 
 type Filter = "all" | Category;
 
-export function WorksGrid({ limit }: { limit?: number }) {
+export function WorksGrid({
+  limit,
+  variant = "published",
+}: {
+  limit?: number;
+  variant?: "published" | "spotlight";
+}) {
   const [filter, setFilter] = useState<Filter>("all");
   const [external, setExternal] = useState<Project | null>(null);
   const reduced = useReducedMotion();
   const tabsRef = useRef<HTMLDivElement>(null);
 
+  const pool =
+    variant === "spotlight"
+      ? { branding: spotlightBrandingProjects, website: spotlightWebsiteProjects }
+      : { branding: featuredBrandingProjects, website: featuredWebsiteProjects };
+
   const tabs = useMemo(
     () =>
       [
-        { id: "all" as const, label: "All", count: projects.length },
-        {
-          id: "branding" as const,
-          label: "Branding",
-          count: projects.filter((p) => p.category === "branding").length,
-        },
-        {
-          id: "website" as const,
-          label: "Website",
-          count: projects.filter((p) => p.category === "website").length,
-        },
+        { id: "all" as const, label: "All", count: pool.branding.length + pool.website.length },
+        { id: "branding" as const, label: "Branding", count: pool.branding.length },
+        { id: "website" as const, label: "Websites", count: pool.website.length },
       ],
-    [],
+    [pool.branding.length, pool.website.length],
   );
 
   const visible = useMemo(() => {
-    const list = filter === "all" ? projects : projects.filter((p) => p.category === filter);
+    const all = variant === "spotlight" ? getSpotlightProjects() : getFeaturedProjects();
+    const list = filter === "all" ? all : pool[filter];
     return limit ? list.slice(0, limit) : list;
-  }, [filter, limit]);
+  }, [filter, limit, variant, pool]);
 
   const onKeyNav = (e: React.KeyboardEvent, index: number) => {
     if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
@@ -113,7 +126,7 @@ export function WorksGrid({ limit }: { limit?: number }) {
                 ease: EASE,
               }}
             >
-              <ProjectCard project={project} onExternal={setExternal} />
+              <ProjectCard project={project} onExternal={setExternal} priority={i < 2} />
             </motion.div>
           ))}
         </AnimatePresence>

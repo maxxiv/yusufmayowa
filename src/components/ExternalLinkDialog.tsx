@@ -11,7 +11,7 @@ interface Props {
 /** Confirmation shown before leaving the site for an externally hosted project. */
 export function ExternalLinkDialog({ project, onClose }: Props) {
   const reduced = useReducedMotion();
-  const confirmRef = useRef<HTMLAnchorElement>(null);
+  const confirmRef = useRef<HTMLElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -79,33 +79,49 @@ export function ExternalLinkDialog({ project, onClose }: Props) {
             transition={{ duration: reduced ? 0 : 0.35, ease: EASE }}
           >
             <p className="text-[0.7rem] font-medium tracking-[0.14em] uppercase text-ink-faint">
-              External link
+              {project.comingSoon ? "Coming soon" : "External Website"}
             </p>
             <h2 id="ext-title" className="mt-3 font-display text-2xl">
               {project.name}
             </h2>
             <p id="ext-desc" className="mt-2.5 text-sm leading-relaxed text-ink-soft">
-              This project is hosted externally and will open in a new tab.
+              {project.comingSoon
+                ? "This site isn't live yet. Check back soon."
+                : "You're about to view this project on its live website. A new browser tab will open so you can explore the experience without leaving this portfolio."}
             </p>
 
             <div className="mt-7 flex flex-col-reverse gap-2.5 sm:flex-row sm:justify-end">
-              <button
-                type="button"
-                onClick={onClose}
-                className="min-h-11 rounded-full border border-ink/12 px-6 text-sm font-medium text-ink transition-colors duration-200 hover:bg-ink/5"
-              >
-                Cancel
-              </button>
-              <a
-                ref={confirmRef}
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={onClose}
-                className="inline-flex min-h-11 items-center justify-center rounded-full bg-ink px-6 text-sm font-medium text-paper transition-transform duration-200 hover:scale-[1.03] active:scale-[0.97]"
-              >
-                Continue
-              </a>
+              {project.comingSoon ? (
+                <button
+                  ref={confirmRef as React.Ref<HTMLButtonElement>}
+                  type="button"
+                  onClick={onClose}
+                  className="inline-flex min-h-11 items-center justify-center rounded-full bg-ink px-6 text-sm font-medium text-paper transition-transform duration-200 hover:scale-[1.03] active:scale-[0.97]"
+                >
+                  Close
+                </button>
+              ) : (
+                <>
+                  <button
+                    type="button"
+                    onClick={onClose}
+                    className="min-h-11 rounded-full border border-ink/12 px-6 text-sm font-medium text-ink transition-colors duration-200 hover:bg-ink/5"
+                  >
+                    Cancel
+                  </button>
+                  <a
+                    ref={confirmRef as React.Ref<HTMLAnchorElement>}
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={onClose}
+                    className="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-full bg-ink px-6 text-sm font-medium text-paper transition-transform duration-200 hover:scale-[1.03] active:scale-[0.97]"
+                  >
+                    Open Website
+                    <span aria-hidden>→</span>
+                  </a>
+                </>
+              )}
             </div>
           </motion.div>
         </motion.div>

@@ -185,10 +185,6 @@
   }
 }
 
-@utility measure {
-  max-width: 34rem;
-}
-
 @utility link-quiet {
   position: relative;
   transition: color 200ms var(--ease-out-apple);

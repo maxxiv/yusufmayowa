@@ -3,9 +3,9 @@ import { Reveal } from "@/components/Reveal";
 import { WorksGrid } from "@/components/WorksGrid";
 import { CTASection } from "@/components/CTASection";
 
-const title = "Works — Yusuf Mayowa";
+const title = "Works | Yusuf Mayowa";
 const description =
-  "Fifteen selected projects: brand identity systems, packaging and websites for founders across Nigeria, the UK and the US.";
+  "Ten selected projects: brand identity systems, packaging and websites for founders across Nigeria, the UK, Australia, and Canada.";
 
 export const Route = createFileRoute("/works/")({
   head: () => ({

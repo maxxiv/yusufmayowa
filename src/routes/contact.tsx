@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/data/site";
 
-const title = "Contact — Yusuf Mayowa";
+const title = "Contact | Yusuf Mayowa";
 const description =
   "Start a brand identity or website project with Yusuf Mayowa. Tell me what you're building and when it needs to be live.";
 
@@ -30,12 +30,11 @@ function ContactPage() {
           Contact
         </p>
         <h1 className="mt-5 max-w-[16ch] font-display text-[clamp(2.4rem,7vw,4.5rem)] leading-[1.04] font-bold">
-          Tell me what you're building.
+          Let's talk about your next project.
         </h1>
         <p className="mt-7 max-w-lg text-[1.0625rem] leading-relaxed text-ink-soft">
-          A few lines is enough: what the business does, what you need designed, and when it
-          needs to be live. I reply to every genuine enquiry within two working days — including
-          the ones I can't take.
+          Whether you're building a new brand or improving an existing one, I'd love to hear what
+          you're working on.
         </p>
       </Reveal>
 

@@ -10,11 +10,8 @@ export function CTASection() {
             id="cta-heading"
             className="mx-auto max-w-2xl font-display text-[clamp(2rem,5.5vw,3.5rem)] leading-[1.05]"
           >
-            Have a project in mind?
+            Let's use design to connect your brand with your audience.
           </h2>
-          <p className="mx-auto mt-5 max-w-md text-[1.0625rem] leading-relaxed text-paper/60">
-            Let's build something people remember.
-          </p>
           <Link
             to="/contact"
             className="mt-10 inline-flex min-h-12 items-center rounded-full bg-paper px-8 text-sm font-medium text-ink transition-transform duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.97]"

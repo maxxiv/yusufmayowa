@@ -5,9 +5,10 @@ import { WorksGrid } from "@/components/WorksGrid";
 import { Testimonials } from "@/components/Testimonials";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { CTASection } from "@/components/CTASection";
+import { ProcessSection } from "@/components/ProcessSection";
 import portrait from "@/assets/portrait.jpg";
 
-const title = "Yusuf Mayowa — Brand Identity & Web Designer";
+const title = "Yusuf Mayowa | Brand Identity & Web Designer";
 const description =
   "Yusuf Mayowa is a brand identity and web designer in Lagos, using design to connect brands with their audience. Selected branding case studies and website work.";
 
@@ -40,32 +41,30 @@ function Hero() {
       aria-labelledby="hero-heading"
       className="container-site flex min-h-[88svh] flex-col justify-center pt-32 pb-16 text-center md:min-h-screen md:pt-40"
     >
-      <motion.p
-        {...line(0.05)}
-        className="text-sm tracking-[-0.01em] text-ink-soft md:text-base"
-      >
-        Hi, I'm Yusuf.
-      </motion.p>
+      <motion.div {...line(0.05)} className="mx-auto">
+        <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm tracking-[-0.01em] text-ink-soft md:text-base">
+          <span className="relative grid size-2 shrink-0 place-items-center" aria-hidden>
+            <motion.span
+              className="size-2 rounded-full bg-accent"
+              animate={reduced ? undefined : { opacity: [1, 0.4, 1], scale: [1, 0.85, 1] }}
+              transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </span>
+          Brand & Website Designer
+        </span>
+      </motion.div>
 
       <h1
         id="hero-heading"
-        className="mx-auto mt-6 max-w-[15ch] font-display text-[clamp(2.5rem,7vw,4.75rem)] leading-[1.05] font-bold sm:max-w-5xl"
+        className="mx-auto mt-6 max-w-[15ch] font-display text-[clamp(2.75rem,8vw,6rem)] leading-[1.05] font-bold sm:max-w-5xl"
       >
         <motion.span {...line(0.16)} className="block">
           Using <span className="text-accent">Design</span> to connect
         </motion.span>
         <motion.span {...line(0.28)} className="block">
-          Brands with their <span className="text-accent">Audience</span>
+          <span className="text-accent">Brands</span> with their Audience
         </motion.span>
       </h1>
-
-      <motion.p
-        {...line(0.42)}
-        className="mx-auto mt-8 max-w-md text-[0.95rem] leading-relaxed text-ink-soft md:mt-10"
-      >
-        Brand identity systems and websites for founders who care how their work is
-        understood. Based in Lagos, working everywhere.
-      </motion.p>
     </section>
   );
 }
@@ -95,7 +94,7 @@ function About() {
               height={1200}
               loading="lazy"
               decoding="async"
-              className="aspect-[5/6] w-full object-cover grayscale"
+              className="aspect-[5/6] w-full object-cover grayscale contrast-125"
             />
           </figure>
         </Reveal>
@@ -103,29 +102,26 @@ function About() {
         <Reveal delay={0.1}>
           <div className="space-y-6 text-[1.0625rem] leading-[1.75] text-ink-soft">
             <p>
-              I didn't get into design because I liked making things look good. I got into it
-              because I kept meeting good businesses that couldn't explain themselves. The
-              product was solid, the price was fair, and the person across the table still
-              didn't get it. Design turned out to be the bridge.
+              I'm Yusuf, a brand identity and website designer helping businesses look as credible
+              as the work they already do.
             </p>
             <p>
-              So I start with questions, not sketches. Who buys this, what do they say about it
-              in their own words, and what do they compare it to? Most of my strongest work has
-              come from a sentence a customer said in a support call, not from a mood board.
+              I design visual identities and websites that make brands easier to trust, easier to
+              remember, and easier to choose. Whether it's building a new identity from scratch or
+              redesigning an existing one, every decision is made with the people you're trying to
+              reach in mind.
             </p>
             <p>
-              What you can expect: one direction presented in context rather than three logos on
-              a slide, honest timelines, and a system your team can run without me. I take a
-              small number of projects at a time, which is the only way I know to do this
-              properly.
+              I believe good design isn't decoration. It's clarity. When people immediately
+              understand who you are and why they should trust you, design has done its job.
             </p>
           </div>
 
           <dl className="mt-10 grid grid-cols-3 gap-6 border-t border-ink/10 pt-8">
             {[
-              { k: "Years designing", v: "6+" },
-              { k: "Brands shipped", v: "40+" },
-              { k: "Based in", v: "Lagos" },
+              { k: "Years of experience", v: "5+" },
+              { k: "Projects delivered", v: "50+" },
+              { k: "Countries served", v: "5+" },
             ].map((s) => (
               <div key={s.k}>
                 <dt className="text-xs text-ink-faint">{s.k}</dt>
@@ -133,6 +129,13 @@ function About() {
               </div>
             ))}
           </dl>
+
+          <Link
+            to="/about"
+            className="mt-8 inline-flex min-h-11 items-center rounded-full border border-ink/12 px-6 text-sm font-medium text-ink transition-colors duration-200 hover:bg-ink/5"
+          >
+            More about me
+          </Link>
         </Reveal>
       </div>
     </section>
@@ -144,30 +147,37 @@ function Index() {
     <>
       <Hero />
 
-      <section aria-labelledby="works-heading" className="container-site section-y pt-0">
-        <Reveal>
-          <p className="text-center text-[0.7rem] font-medium tracking-[0.16em] uppercase text-ink-faint">
-            Portfolio
-          </p>
-          <h2
-            id="works-heading"
-            className="mt-4 mb-12 text-center font-display text-[clamp(2rem,5vw,3.25rem)] leading-[1.08] md:mb-16"
-          >
-            Selected works
-          </h2>
-        </Reveal>
-        <WorksGrid limit={6} />
-        <div className="mt-12 flex justify-center">
-          <Link
-            to="/works"
-            className="inline-flex min-h-11 items-center rounded-full border border-ink/12 px-6 text-sm font-medium transition-colors duration-200 hover:bg-ink/5"
-          >
-            View all projects
-          </Link>
+      <section
+        aria-labelledby="works-heading"
+        className="section-y bg-ink text-paper"
+        style={{ colorScheme: "dark" }}
+      >
+        <div className="container-site">
+          <Reveal>
+            <p className="text-center text-[0.7rem] font-medium tracking-[0.16em] uppercase text-paper/45">
+              Portfolio
+            </p>
+            <h2
+              id="works-heading"
+              className="mt-4 mb-12 text-center font-display text-[clamp(2rem,5vw,3.25rem)] leading-[1.08] md:mb-16"
+            >
+              Selected works
+            </h2>
+          </Reveal>
+          <WorksGrid variant="spotlight" />
+          <div className="mt-12 flex justify-center">
+            <Link
+              to="/works"
+              className="inline-flex min-h-11 items-center rounded-full border border-paper/20 px-6 text-sm font-medium text-paper transition-colors duration-200 hover:bg-paper/10"
+            >
+              View all projects
+            </Link>
+          </div>
         </div>
       </section>
 
       <About />
+      <ProcessSection title="Design Process" />
       <Testimonials />
 
       <section aria-labelledby="faq-heading" className="container-site section-y">

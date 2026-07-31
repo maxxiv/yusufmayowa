@@ -71,6 +71,10 @@ export function Testimonials() {
               <footer className="mt-10">
                 <p className="font-display text-lg tracking-[-0.02em]">{t.name}</p>
                 <p className="mt-1 text-sm text-paper/50">{t.role}</p>
+                <p className="mt-1.5 flex items-center gap-1.5 text-xs text-paper/40">
+                  <span aria-hidden>{t.flag}</span>
+                  {t.country}
+                </p>
               </footer>
             </li>
           ))}

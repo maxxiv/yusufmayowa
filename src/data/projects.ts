@@ -1,35 +1,73 @@
-import mauve from "@/assets/work-mauve.jpg";
-import inpay from "@/assets/work-inpay.jpg";
-import kanju from "@/assets/work-kanju.jpg";
-import terra from "@/assets/work-terra.jpg";
-import sable from "@/assets/work-sable.jpg";
-import olori from "@/assets/work-olori.jpg";
-import northbank from "@/assets/work-northbank.jpg";
-import verre from "@/assets/work-verre.jpg";
-import adire from "@/assets/work-adire.jpg";
-import lumen from "@/assets/work-lumen.jpg";
-import geowyse from "@/assets/work-geowyse.jpg";
+import mauveFullLook from "@/assets/mauve-full-look.png";
+import mauveShirtDetail from "@/assets/mauve-shirt-detail.png";
+import mauveCap from "@/assets/mauve-cap.png";
+import mauveTee from "@/assets/mauve-tee.png";
+import mauveBag from "@/assets/mauve-bag.png";
+import amalaHero from "@/assets/amala-hero.png";
+import amalaLogo from "@/assets/amala-logo.png";
+import amalaColors from "@/assets/amala-colors.png";
+import fadHero from "@/assets/fad-hero.png";
+import fadBusinessCard from "@/assets/fad-businesscard.png";
+import fadSocial from "@/assets/fad-social.png";
+import fadTruck from "@/assets/fad-truck.png";
+import firmlogsHero from "@/assets/firmlogs-hero-2.webp";
+import firmlogsSketches from "@/assets/firmlogs-sketches.webp";
+import firmlogsLogoWood from "@/assets/firmlogs-logo-wood.webp";
+import firmlogsPalette from "@/assets/firmlogs-palette.webp";
+import firmlogsPosters from "@/assets/firmlogs-posters.webp";
+import firmlogsToteCards from "@/assets/firmlogs-tote-cards.webp";
+import firmlogsLaptop from "@/assets/firmlogs-laptop.webp";
+import firmlogsSignageLetterhead from "@/assets/firmlogs-signage-letterhead.webp";
+import firmlogsModel from "@/assets/firmlogs-model.webp";
+import firmlogsBedroomCabinet from "@/assets/firmlogs-bedroom-cabinet.webp";
+import nextgenHero from "@/assets/nextgen-hero-2.webp";
+import nextgenSketches from "@/assets/nextgen-sketches.webp";
+import nextgenLogoMark from "@/assets/nextgen-logo-mark.webp";
+import nextgenPalette from "@/assets/nextgen-palette.webp";
+import nextgenBillboard from "@/assets/nextgen-billboard.webp";
+import nextgenLogoGridSignage from "@/assets/nextgen-logo-grid-signage.webp";
+import nextgenTeeCap from "@/assets/nextgen-tee-cap.webp";
+import nextgenReceiptIdCard from "@/assets/nextgen-receipt-idcard.webp";
+import nextgenBusinessCardLetterhead from "@/assets/nextgen-businesscard-letterhead.webp";
+import nextgenPosters from "@/assets/nextgen-posters.webp";
+import mayaLuxeHero from "@/assets/maya-luxe-hero.png";
+import mayaLuxeTypography from "@/assets/maya-luxe-typography.png";
+import mayaLuxeSocial from "@/assets/maya-luxe-social.png";
+import okeowoHero from "@/assets/okeowo-hero.png";
+import okeowoLogo from "@/assets/okeowo-logo.png";
+import okeowoSocial from "@/assets/okeowo-social.png";
+import okeowoTote from "@/assets/okeowo-tote.png";
+import roseviewHero from "@/assets/roseview-hero.png";
+import roseviewBusinessCard from "@/assets/roseview-businesscard.png";
+import roseviewSocial from "@/assets/roseview-social.png";
+import revionHero from "@/assets/revion-hero.png";
+import revionCollage from "@/assets/revion-collage.png";
+import revionAppIcon from "@/assets/revion-appicon.png";
+import revionBillboard from "@/assets/revion-billboard.png";
+import efficiencyLegalHero from "@/assets/efficiency-legal-hero.jpg";
+import efficiencyLegalBusinessCard from "@/assets/efficiency-legal-businesscard.jpg";
+import efficiencyLegalPatterns from "@/assets/efficiency-legal-patterns.png";
+import efficiencyLegalEnvelope from "@/assets/efficiency-legal-envelope.png";
+import alderStoneHero from "@/assets/alder-stone-hero.png";
+import alderStoneLogo from "@/assets/alder-stone-logo.png";
+import alderStoneColors from "@/assets/alder-stone-colors.png";
+import folio from "@/assets/work-folio.jpg";
 import aeris from "@/assets/work-aeris.jpg";
 import harvest from "@/assets/work-harvest.jpg";
 import stride from "@/assets/work-stride.jpg";
-import folio from "@/assets/work-folio.jpg";
-import detailProcess from "@/assets/detail-process.jpg";
-import detailSystem from "@/assets/detail-system.jpg";
-import detailApplications from "@/assets/detail-applications.jpg";
+import geowyse from "@/assets/work-geowyse.jpg";
 
 export type Category = "branding" | "website";
 
 export interface CaseStudy {
+  industry: string;
   overview: string;
   challenge: string;
-  discovery: string;
-  strategy: string;
-  logo: string;
-  identity: string;
-  applications: string;
-  outcome: string;
-  results: { label: string; value: string }[];
-  lessons: string;
+  solution: string;
+  designExploration?: string;
+  logoConcept?: { image: string; note: string };
+  colorPalette?: { image: string; note: string };
+  gallery: string[];
 }
 
 export interface Project {
@@ -43,365 +81,338 @@ export interface Project {
   alt: string;
   services: string[];
   url?: string;
+  comingSoon?: boolean;
   caseStudy?: CaseStudy;
+  featured?: boolean;
+  spotlight?: boolean;
 }
-
-export const galleryImages = {
-  process: detailProcess,
-  system: detailSystem,
-  applications: detailApplications,
-};
 
 export const projects: Project[] = [
   {
     slug: "mauve",
     name: "Mauve",
-    client: "Mauve Skin Co.",
-    description: "A restrained identity for a skincare label built around clinical honesty.",
+    client: "Mauve",
+    description: "A confident identity for a premium activewear label built around movement and simplicity.",
     category: "branding",
     year: "2025",
-    image: mauve,
-    alt: "Matte black Mauve skincare box with an embossed silver monogram held in warm light",
+    featured: true,
+    image: mauveFullLook,
+    alt: "Model wearing full Mauve activewear look: black shorts, branded socks, and trainers",
     services: ["Brand strategy", "Identity", "Packaging"],
     caseStudy: {
+      industry: "Activewear & Performance Apparel",
       overview:
-        "Mauve formulates a nine-product skincare range sold direct to customers in Lagos and Abuja. They came in with a good formula, a loyal WhatsApp customer base, and packaging that looked like everyone else on the shelf. I handled positioning, the identity system, and the primary and secondary packaging.",
+        "Mauve makes performance apparel, shorts, tees, and accessories, for people who train seriously but don't want to look like they're wearing a jersey. I built the full identity and packaging system.",
       challenge:
-        "Their customers trusted the products but couldn't describe the brand to a friend. In a market where every competitor promises glow, Mauve needed to be recognisable at arm's length in a shop, and to stop competing on the same three adjectives.",
-      discovery:
-        "I sat in on twelve customer calls and read four months of order messages. The recurring phrase wasn't about glow — it was 'it actually did what it said'. That sentence became the brief. I also photographed twenty competitor boxes on a shelf; almost all were white, glossy, and pastel.",
-      strategy:
-        "Position Mauve as the honest one: no promises the formula can't keep. Visually, that meant going the opposite direction from the category — matte black instead of white, ingredient percentages on the front of the box, and a tone of voice that states facts and stops.",
-      logo: "The wordmark is a modified grotesque with the stems squared off, drawn so it holds at 6mm on a sample sachet. The monogram is two overlapping planes — the layered barrier the range is built to protect. It survives a single-colour deboss, which was the real test.",
-      identity:
-        "One black, one bone, one graphite, and a percentage-driven type system. Ingredient data is set in the same size as the product name — a deliberate hierarchy decision that tells the customer what the brand thinks matters.",
-      applications:
-        "Primary cartons, sachets, unboxing insert cards, courier tape, and a set of shot templates so their in-house team could keep the photography consistent after handover.",
-      outcome:
-        "A brand that reads as a laboratory rather than a lifestyle. Every surface uses the same two typefaces and three colours, which made the retail rollout cheap to produce.",
-      results: [
-        { label: "Repeat purchase rate", value: "+34%" },
-        { label: "Retail stockists gained", value: "18" },
-        { label: "Rollout time", value: "7 weeks" },
-      ],
-      lessons:
-        "The strongest positioning line came from a customer, not a workshop. I now read support transcripts before I open a sketchbook.",
+        "Activewear is crowded with brands shouting logos across the chest. Mauve needed to feel premium and minimal, closer to fashion than sportswear, without losing performance credibility.",
+      solution:
+        "A soft custom wordmark and a small geometric mark discreet enough to sit on a hem or a sock, a lavender-and-black palette that reads as premium rather than sporty, and packaging considered enough to be part of the product.",
+      gallery: [mauveShirtDetail, mauveCap, mauveTee, mauveBag],
     },
   },
   {
-    slug: "inpay",
-    name: "Inpay",
-    client: "Inpay Technologies",
-    description: "A fintech identity that reads as infrastructure, not a startup.",
+    slug: "amala-on-the-go",
+    name: "Amala On The Go",
+    client: "Amala On The Go",
+    description: "A complete identity for a Nigerian food brand serving customers in Toronto.",
     category: "branding",
     year: "2025",
-    image: inpay,
-    alt: "Two matte black Inpay cards resting on textured concrete under dramatic light",
-    services: ["Identity", "Design system", "Collateral"],
+    image: amalaHero,
+    alt: "Two bowls of amala and stew beside the Amala On The Go logo mark",
+    services: ["Identity", "Brand guidelines", "Social assets"],
     caseStudy: {
+      industry: "Food & Beverage",
       overview:
-        "Inpay moves payouts for businesses paying contractors across West Africa. Their audience is finance leads, not consumers. I rebuilt the identity ahead of their seed raise and enterprise sales push.",
+        "Amala On The Go brings Nigerian food to customers across Toronto. I built the logo, the full identity, and the guidelines that keep it consistent.",
       challenge:
-        "The previous brand was bright, rounded and friendly — which made procurement teams treat them like a side project. The work was to look older than the company is, without looking like a bank from 1996.",
-      discovery:
-        "I interviewed six of their customers' finance managers. None of them cared about speed claims; all of them asked, unprompted, who else uses it. Credibility, not innovation, was the buying trigger.",
-      strategy:
-        "Design for the second meeting, not the first impression. Restrained palette, dense information design, and collateral built around evidence: settlement times, uptime, named customers.",
-      logo: "A tight monoline wordmark with a single ligature between the n and p, referencing a completed transfer. No icon — a symbol would have needed explaining, and the name is short enough to carry the brand alone.",
-      identity:
-        "Near-black and cold grey with one signal blue reserved for state changes in product. A two-weight type system, generous tabular figures, and a strict 8pt grid across every document.",
-      applications:
-        "Pitch template, one-pagers, the card programme, API documentation styling, and a signage system for their Lagos office.",
-      outcome:
-        "A brand that survives being printed in black and white and faxed — which, for enterprise finance, is a real requirement.",
-      results: [
-        { label: "Enterprise demos booked", value: "2.1×" },
-        { label: "Sales cycle", value: "-19 days" },
-        { label: "Deliverables shipped", value: "40+" },
-      ],
-      lessons:
-        "Restraint reads as confidence in finance. Every element I removed made the brand feel more established.",
+        "The food was authentic, but the brand didn't yet look like it belonged next to the city's established restaurants.",
+      solution:
+        "A visual system built around the colour and warmth of the food itself, applied consistently across packaging, social, and print.",
+      gallery: [amalaLogo, amalaColors],
     },
   },
   {
-    slug: "kanju",
-    name: "Kanju",
-    client: "Kanju Furniture",
-    description: "Identity and packaging for a made-to-order furniture workshop.",
+    slug: "fad-global-resources",
+    name: "FAD Global Resources",
+    client: "FAD Global Resources Ltd",
+    description: "An established, dependable identity for a logistics and business resources company.",
     category: "branding",
     year: "2024",
-    image: kanju,
-    alt: "Kraft Kanju packaging bag resting on a wooden chair in warm window light",
-    services: ["Identity", "Packaging", "Art direction"],
+    featured: true,
+    spotlight: true,
+    image: fadHero,
+    alt: "Branded T-shirt on a mannequin showing the FAD Global Resources logo",
+    services: ["Identity", "Brand guidelines", "Stationery"],
     caseStudy: {
+      industry: "Logistics & Business Resources",
       overview:
-        "Kanju is a four-person workshop building custom furniture in Ibadan. They had a waiting list and no way to explain their prices. I built the identity, the packaging, and the photography direction.",
+        "FAD Global Resources moves goods and manages business resourcing across Nigeria. The brand needed to carry the same weight on the side of a haulage truck as it does on a boardroom proposal.",
       challenge:
-        "Customers were comparing hand-joined oak to flat-pack pricing. The brand had to make the labour visible before the quote arrived.",
-      discovery:
-        "I spent two days in the workshop. The most persuasive thing there wasn't a finished chair — it was the jig wall, the offcuts, the pencil marks. None of it appeared anywhere in their marketing.",
-      strategy:
-        "Sell the process, not the product. Every touchpoint shows evidence of hand-work: uncoated stock, visible construction, and a maker's mark burned into each piece.",
-      logo: "A wordmark cut from a single stroke weight with a joinery notch in the K — a dovetail read at small sizes. Drawn to burn cleanly into end grain without filling in.",
-      identity:
-        "Kraft, walnut brown, and off-black. One typeface at two weights. Every printed piece uses uncoated stock so it feels like the workshop it came from.",
-      applications:
-        "Swing tags, quote documents, delivery packaging, the branding iron, and a warm, single-source photography direction.",
-      outcome:
-        "A brand that justifies its price before a salesperson speaks. Average order value moved without a price-list change.",
-      results: [
-        { label: "Average order value", value: "+41%" },
-        { label: "Quote-to-order", value: "+22%" },
-        { label: "Pieces branded", value: "300+" },
-      ],
-      lessons:
-        "The most convincing asset was already in the room. Research is often just looking at what the client stopped noticing.",
+        "Their existing materials were inconsistent from one document, and one truck, to the next, which made the business look smaller and less established than it was.",
+      solution:
+        "A tightened monogram built to read at a glance from a moving vehicle, a confident red-and-cream palette, and a stationery system built to be used correctly without a designer in the room.",
+      gallery: [fadTruck, fadSocial, fadBusinessCard],
     },
   },
   {
-    slug: "terra-roast",
-    name: "Terra Roast",
-    client: "Terra Roast Coffee",
-    description: "A single-origin coffee brand designed to be read across a counter.",
+    slug: "firmlogs",
+    name: "Firmlogs Designs",
+    client: "Firmlogs Designs",
+    description: "A refined identity for a custom furniture design studio.",
     category: "branding",
     year: "2024",
-    image: terra,
-    alt: "Terra Roast coffee bag with a minimal typographic label on a dark wooden table",
+    featured: true,
+    spotlight: true,
+    image: firmlogsHero,
+    alt: "Dark wood-panelled hallway with the Firmlogs Designs gold logo mark",
+    services: ["Identity", "Brand guidelines", "Social assets"],
+    caseStudy: {
+      industry: "Furniture & Interior Design",
+      overview:
+        "Firmlogs Designs is a premium furniture and interior design company specialising in bespoke furniture, interior styling, and space transformation, built around exceptional craftsmanship and carefully selected materials.",
+      challenge:
+        "The previous identity relied on a complex visual structure with multiple graphic elements, which limited scalability and reduced recognition across modern applications.",
+      solution:
+        "A cleaner, more distinctive mark that reflects the brand's premium positioning, paired with a walnut-and-sandstone palette pulled from the materials the studio actually works with.",
+      designExploration: firmlogsSketches,
+      logoConcept: {
+        image: firmlogsLogoWood,
+        note: "The mark started as a sketch built from the brand's own words, firm, logs, wood, before resolving into a single F monogram with a soft, organic curve.",
+      },
+      colorPalette: {
+        image: firmlogsPalette,
+        note: "Rich Walnut, Soft Ivory, Warm Sandstone, and Heritage Cedar, pulled straight from the materials the studio builds with.",
+      },
+      gallery: [
+        firmlogsPosters,
+        firmlogsToteCards,
+        firmlogsLaptop,
+        firmlogsSignageLetterhead,
+        firmlogsModel,
+        firmlogsBedroomCabinet,
+      ],
+    },
+  },
+  {
+    slug: "next-generation-builders",
+    name: "Next Generation Builders",
+    client: "Next Generation Builders",
+    description: "A bold, structured identity for a construction firm built on trust and long-term thinking.",
+    category: "branding",
+    year: "2024",
+    featured: true,
+    spotlight: true,
+    image: nextgenHero,
+    alt: "Next-Generation Builders logo and wordmark on a dark blue background",
+    services: ["Identity", "Signage", "Print collateral"],
+    caseStudy: {
+      industry: "Construction & Real Estate Development",
+      overview:
+        "Next-Generation Builders Ltd delivers high-quality, well-planned residential and commercial developments, built on a vision of creating spaces that meet today's needs while preparing for the future through thoughtful planning, quality craftsmanship, and dependable execution.",
+      challenge:
+        "The company serves everyone from first-time buyers to corporate investors, which meant the identity needed to read as bold and architectural without losing the trust a family looks for when buying their first home.",
+      solution:
+        "A bold architectural ‘N’ built from a fortified tower silhouette, symbolising strength and stability, paired with a navy-and-blue palette, mint accents, and the line ‘Where Innovation Meets Shelter.’",
+      designExploration: nextgenSketches,
+      logoConcept: {
+        image: nextgenLogoMark,
+        note: "The mark reads as an N built like a fortified tower, its crenellated top signalling strength and permanence, with a diagonal cut suggesting forward motion.",
+      },
+      colorPalette: {
+        image: nextgenPalette,
+        note: "Dark Blue, Pure White, Blue, Mint Green, and Mint Purple, a confident palette built for a brand that wants to feel established and forward-looking at once.",
+      },
+      gallery: [
+        nextgenBillboard,
+        nextgenLogoGridSignage,
+        nextgenTeeCap,
+        nextgenReceiptIdCard,
+        nextgenBusinessCardLetterhead,
+        nextgenPosters,
+      ],
+    },
+  },
+  {
+    slug: "maya-luxe-homes",
+    name: "Maya Luxe Homes",
+    client: "Maya Luxe Homes",
+    description: "A warm, elevated identity for an interior design studio.",
+    category: "branding",
+    year: "2023",
+    image: mayaLuxeHero,
+    alt: "Warm, dimly lit living room interior with the Maya Luxe Homes logo",
+    services: ["Identity", "Art direction"],
+    caseStudy: {
+      industry: "Interior Design",
+      overview:
+        "Maya Luxe Homes designs residential interiors in Abuja, covering everything from space planning to styling. The brand needed to feel as considered as the rooms it designs.",
+      challenge:
+        "Interior design brands tend to default to the same gold-and-serif look, which made Maya hard to tell apart from every other studio online.",
+      solution:
+        "A warm neutral palette pulled from the studio's own material choices, a quiet serif wordmark, and a photography direction built around low, ambient light.",
+      gallery: [mayaLuxeTypography, mayaLuxeSocial],
+    },
+  },
+  {
+    slug: "okeowo-threads",
+    name: "Okeowo Threads",
+    client: "Okeowo Threads",
+    description: "A refined identity for a Nigerian fashion label built around craftsmanship and provenance.",
+    category: "branding",
+    year: "2023",
+    featured: true,
+    spotlight: true,
+    image: okeowoHero,
+    alt: "Model in a patterned dress and hat beneath the Okeowo Threads logo",
     services: ["Identity", "Packaging", "Naming"],
     caseStudy: {
+      industry: "Fashion & Textiles",
       overview:
-        "Terra Roast roasts Nigerian and Ethiopian beans for cafés and home subscribers. I named the sub-ranges, designed the identity, and built a packaging system that scales to new origins without a redesign.",
+        "Okeowo Threads works with traditional Nigerian textiles reimagined for modern fashion, sold in-store and online. I built the identity and the tagging system that travels with each piece.",
       challenge:
-        "Every new origin meant a new bag design and a new print run. They needed a system, not artwork.",
-      discovery:
-        "Baristas, not drinkers, decide which bag faces out. I asked eight of them what they look for: origin, roast date, and tasting notes — in that order, from two metres away.",
-      strategy:
-        "Make the label a data card. Fixed layout, variable content. One plate change per origin instead of a full redesign.",
-      logo: "A stencil-influenced wordmark referencing the jute sacks beans arrive in, with a horizon rule that doubles as the divider on every label.",
-      identity:
-        "Kraft base with a single origin-coded ink. Origin sits largest, roast date second, notes third — the barista's own order of priority.",
-      applications:
-        "250g and 1kg bags, café-facing cards, subscription inserts, and a label template their roaster fills in himself.",
-      outcome:
-        "Nine origins have shipped on the system since launch, none of which required me.",
-      results: [
-        { label: "New origins on system", value: "9" },
-        { label: "Packaging cost", value: "-27%" },
-        { label: "Wholesale accounts", value: "+12" },
-      ],
-      lessons:
-        "Designing the template is worth more to a small brand than designing the artwork.",
+        "Buyers wanted to know the story behind the fabric, and the brand had no consistent way to tell it at the point of sale.",
+      solution:
+        "A circular gold-on-teal mark drawn to feel like a woven motif, a tagging system that carries maker and fabric details, and packaging built to feel considered at a boutique price point.",
+      gallery: [okeowoLogo, okeowoSocial, okeowoTote],
     },
   },
   {
-    slug: "sable",
-    name: "Sable",
-    client: "Sable Architecture Studio",
-    description: "A quiet identity for an architecture practice that hates logos.",
-    category: "branding",
-    year: "2024",
-    image: sable,
-    alt: "Sable architecture studio stationery on concrete under raking daylight",
-    services: ["Identity", "Editorial system"],
-    caseStudy: {
-      overview:
-        "Sable is a six-person residential practice. Their brief was blunt: they wanted an identity that never appears in front of the buildings.",
-      challenge:
-        "A practice that publishes project books, tender documents, and site signage still needs a system — it just can't rely on a mark to hold it together.",
-      discovery:
-        "I reviewed three years of their documents. The consistent element was the way they set drawing captions: small, sentence case, hung to the left of the image. That was already their identity.",
-      strategy:
-        "Formalise the typographic habits they already had, and let photography do the rest. The system is a grid and a caption style, not a logo.",
-      logo: "A letterspaced wordmark used once per document, at 9pt, in the footer. It is deliberately the smallest element on any page.",
-      identity:
-        "Concrete grey, paper white, near-black. One typeface, three sizes, a 12-column grid with a wide left margin reserved for captions.",
-      applications:
-        "Project monographs, tender submissions, site hoarding, and an InDesign template library the studio maintains itself.",
-      outcome:
-        "Their documents now look like one practice made them. Nothing on the page competes with the buildings.",
-      results: [
-        { label: "Documents templated", value: "14" },
-        { label: "Competition shortlists", value: "3" },
-        { label: "Studio-run updates", value: "100%" },
-      ],
-      lessons:
-        "Sometimes the job is to notice the system a client already has and give it rules.",
-    },
-  },
-  {
-    slug: "olori",
-    name: "Olori",
-    client: "Olori Botanics",
-    description: "Warm, sunlit identity for a botanical body-care range.",
+    slug: "roseview-realty",
+    name: "Roseview Realty",
+    client: "Roseview Realty",
+    description: "A confident identity for a residential real estate agency.",
     category: "branding",
     year: "2023",
-    image: olori,
-    alt: "Amber Olori Botanics bottles on a sand-coloured plinth in raking sunlight",
+    image: roseviewHero,
+    alt: "Roseview Realty logo sign mounted on a building corner against the sky",
+    services: ["Identity", "Signage", "Listing templates"],
+    caseStudy: {
+      industry: "Real Estate",
+      overview:
+        "Roseview Realty sells and lets residential property in a competitive local market. The brand needed to stand out on a listing page without shouting.",
+      challenge:
+        "Most agencies in the area use the same rounded logo and blue-and-white palette, so nothing stood out at a glance.",
+      solution:
+        "A structural wordmark with a distinct silhouette, and a palette that photographs well against real listing photography instead of fighting it.",
+      gallery: [roseviewBusinessCard, roseviewSocial],
+    },
+  },
+  {
+    slug: "revion",
+    name: "Revion",
+    client: "Revion",
+    description: "A vibrant, digital-first identity for a product analytics platform.",
+    category: "branding",
+    year: "2023",
+    image: revionHero,
+    alt: "Tote bag with the colourful gradient Revion logo mark in warm light",
+    services: ["Identity", "App icon", "Design system"],
+    caseStudy: {
+      industry: "Technology & Product Analytics",
+      overview:
+        "Revion is a product analytics app built around speed and clarity for teams making fast decisions. The brand needed to feel energetic without losing precision.",
+      challenge:
+        "Analytics tools tend to land either sterile and corporate or loud and consumer-facing, and Revion needed to sit convincingly between the two.",
+      solution:
+        "A gradient-led mark designed for a small app icon first and scaled up from there, with a voice built around three words: clarity, speed, intelligence.",
+      gallery: [revionCollage, revionBillboard, revionAppIcon],
+    },
+  },
+  {
+    slug: "efficiency-legal",
+    name: "Efficiency Legal",
+    client: "Efficiency Legal",
+    description: "A calm, precise identity for a legal practice built to modernise how trust is communicated.",
+    category: "branding",
+    year: "2022",
+    featured: true,
+    image: efficiencyLegalHero,
+    alt: "Efficiency Legal signage mounted on the exterior of an office building",
+    services: ["Identity", "Document templates"],
+    caseStudy: {
+      industry: "Legal Services",
+      overview:
+        "Efficiency Legal advises individuals and small businesses in Nigeria. Clients often meet a lawyer at a stressful moment, and the brand needed to earn trust fast without leaning on legal cliché.",
+      challenge:
+        "Legal branding defaults to navy, gold, and Latin mottos, which reads as expensive and distant rather than dependable.",
+      solution:
+        "A scales-of-justice mark reduced to its simplest geometric form, a warm gold-and-black palette, and a consistent stationery system, from envelopes to signage, that reads as precise rather than intimidating.",
+      gallery: [efficiencyLegalBusinessCard, efficiencyLegalPatterns, efficiencyLegalEnvelope],
+    },
+  },
+  {
+    slug: "alder-stone",
+    name: "Alder & Stone",
+    client: "Alder & Stone",
+    description: "A material-led identity for a furniture and interiors studio.",
+    category: "branding",
+    year: "2022",
+    image: alderStoneHero,
+    alt: "Dark, moody armchair photography with the Alder & Stone wordmark",
     services: ["Identity", "Packaging", "Art direction"],
     caseStudy: {
+      industry: "Furniture & Interiors",
       overview:
-        "Olori makes small-batch body oils from West African botanicals. The founder wanted the brand to feel like her grandmother's house, not a spa.",
-      challenge:
-        "Heritage brands in this category slide into pattern and ornament fast. The work was to feel rooted without decorating.",
-      discovery:
-        "We built a reference wall of the founder's family photographs. What carried across all of them was light — late afternoon, hard shadows, warm walls. Not pattern.",
-      strategy:
-        "Let light be the brand asset. Fix the photography rule first, then design packaging that behaves well under it.",
-      logo: "A humanist wordmark with a raised terminal on the i, drawn to sit comfortably on a curved amber bottle without distortion.",
-      identity:
-        "Amber glass, bone label stock, terracotta ink. A single photographic rule: one hard light source, long shadow, no fill.",
-      applications:
-        "Bottle labels, gift sets, market stall signage, and a photography guide with lighting diagrams.",
-      outcome:
-        "The range is recognisable in a customer's own photo, which is where most of it now gets seen.",
-      results: [
-        { label: "Instagram saves", value: "3.4×" },
-        { label: "Market stall conversion", value: "+29%" },
-        { label: "SKUs in system", value: "11" },
-      ],
-      lessons:
-        "Deciding how a brand is photographed is often a bigger decision than how it is drawn.",
+        "Alder & Stone designs furniture around the materials it's built from. The brand needed to put that material honesty front and centre.",
+      challenge: "Furniture brands often photograph beautifully but say very little about why a piece is worth its price.",
+      solution:
+        "A textural identity system built from the studio's own material swatches, with a wordmark restrained enough to stay out of the way of the work.",
+      gallery: [alderStoneLogo, alderStoneColors],
     },
   },
   {
-    slug: "northbank",
-    name: "Northbank",
-    client: "Northbank Capital",
-    description: "A deliberately conservative identity for an investment firm.",
-    category: "branding",
-    year: "2023",
-    image: northbank,
-    alt: "Deep navy Northbank Capital annual report on dark marble with window shadows",
-    services: ["Identity", "Report design"],
-    caseStudy: {
-      overview:
-        "Northbank manages capital for family offices. Their audience is small, wealthy, and sceptical of anything that looks new.",
-      challenge:
-        "Rebrand without signalling change. Their clients read a fresh look as instability.",
-      discovery:
-        "In three client interviews, the word that came up each time was 'steady'. The existing brand wasn't wrong — it was inconsistently applied across twelve document types.",
-      strategy:
-        "Evolve, don't replace. Keep the navy, tighten the wordmark, and put the real effort into the annual report, which is the one thing every client actually reads.",
-      logo: "The existing serif wordmark redrawn: consistent stroke contrast, corrected spacing, and a version that holds at 8mm on a document spine.",
-      identity:
-        "Deep navy, warm paper, and a serif-and-grotesque pairing built for dense tables. Figures are tabular everywhere, without exception.",
-      applications:
-        "Annual report, quarterly letters, pitch books, and a chart library with fixed rules for axis, label, and rounding.",
-      outcome:
-        "Clients did not comment on the rebrand, which the managing partner called the best possible outcome.",
-      results: [
-        { label: "Document types unified", value: "12" },
-        { label: "Report production time", value: "-40%" },
-        { label: "Client complaints", value: "0" },
-      ],
-      lessons:
-        "Not every brand needs to be noticed. Some need to be trusted, which is quieter work.",
-    },
+    slug: "br-reformer-studios",
+    name: "BR Reformer Studios",
+    client: "BR Reformer Studios",
+    description: "Identity and website for a London-based reformer Pilates studio.",
+    category: "website",
+    year: "2026",
+    featured: true,
+    spotlight: true,
+    image: folio,
+    alt: "Laptop showing the BR Reformer Studios website homepage",
+    services: ["Web design", "Booking system"],
+    url: "https://brreformerstudios.com",
   },
   {
-    slug: "verre",
-    name: "Verre",
-    client: "Verre Eyewear",
-    description: "A monogram-led identity for an independent eyewear label.",
-    category: "branding",
-    year: "2023",
-    image: verre,
-    alt: "Verre eyewear case and monogrammed cloth pouch on a warm studio backdrop",
-    services: ["Identity", "Packaging"],
-    caseStudy: {
-      overview:
-        "Verre sells hand-finished frames online and through three opticians. Almost every customer meets the brand at unboxing.",
-      challenge:
-        "The frames are excellent and the packaging was a plain courier box. The gap between the two was costing them referrals.",
-      discovery:
-        "I read 60 reviews. Customers described the frames as 'jewellery' and the delivery as 'fine'. That gap was the whole project.",
-      strategy:
-        "Design the twelve seconds of unboxing as the primary brand experience, and let everything else inherit from it.",
-      logo: "A circular monogram with the V and E sharing a stem, set inside a hairline rule — legible foil-blocked at 12mm on a cloth pouch.",
-      identity:
-        "Bone, graphite, and a single blind-deboss texture. No colour, so the frames are the only thing with any.",
-      applications:
-        "Hard case, microfibre pouch, prescription card, outer carton, and a care leaflet folded to reveal one instruction at a time.",
-      outcome:
-        "Unboxing became the most-shared part of the brand. Referral traffic overtook paid within two quarters.",
-      results: [
-        { label: "Referral traffic", value: "+58%" },
-        { label: "Unboxing posts", value: "4.7×" },
-        { label: "Returns", value: "-11%" },
-      ],
-      lessons:
-        "Find the moment the customer is paying most attention, and spend the budget there.",
-    },
+    slug: "localrank",
+    name: "LocalRank",
+    client: "LocalRank",
+    description: "A marketing site for a local visibility and SEO platform.",
+    category: "website",
+    year: "2025",
+    featured: true,
+    spotlight: true,
+    image: aeris,
+    alt: "Laptop on a dark desk showing the LocalRank website",
+    services: ["Web design", "Product marketing"],
+    url: "https://localrank.yusufmayowa.com",
   },
   {
-    slug: "adire-co",
-    name: "Adire & Co.",
-    client: "Adire & Co.",
-    description: "A contemporary identity for a traditional indigo textile house.",
-    category: "branding",
-    year: "2022",
-    image: adire,
-    alt: "Indigo adire textile folded beside a letterpress swing tag on dark wood",
-    services: ["Identity", "Naming", "Packaging"],
-    caseStudy: {
-      overview:
-        "Adire & Co. works with dyers in Abeokuta and sells finished cloth to designers abroad. I built the identity and the labelling system that travels with each piece.",
-      challenge:
-        "Buyers wanted provenance — who dyed this, where, and when — and the studio had no way to provide it that didn't look like a craft-fair sticker.",
-      discovery:
-        "Every buyer I spoke to asked the same three questions before purchase. The identity's job was to answer them on the tag.",
-      strategy:
-        "Treat provenance as the design. The tag carries dyer name, workshop, and dye date; the identity is the frame that makes that data feel considered rather than folksy.",
-      logo: "A high-contrast wordmark with a resist-dye break in the counters — a nod to the technique that only reveals itself close up.",
-      identity:
-        "Indigo, undyed cotton, and black letterpress. Tags are printed on one plate with a hand-filled field for each maker.",
-      applications:
-        "Swing tags, wholesale line sheets, shipping wraps, and a stamp set the workshop uses for dye-date marking.",
-      outcome:
-        "Provenance moved from a conversation to an object that ships with the cloth.",
-      results: [
-        { label: "Export accounts", value: "+9" },
-        { label: "Wholesale reorder rate", value: "+31%" },
-        { label: "Makers credited", value: "23" },
-      ],
-      lessons:
-        "Giving credit is a design decision. It changed how buyers valued the cloth.",
-    },
+    slug: "maya",
+    name: "Maya",
+    client: "Maya",
+    description: "Website design and build for Maya.",
+    category: "website",
+    year: "2025",
+    featured: true,
+    image: harvest,
+    alt: "Desktop monitor showing the Maya website",
+    services: ["Web design"],
+    url: "https://maya.yusufmayowa.com",
   },
   {
-    slug: "lumen-clinic",
-    name: "Lumen Clinic",
-    client: "Lumen Dental",
-    description: "A calm identity for a dental clinic built to lower anxiety.",
-    category: "branding",
-    year: "2022",
-    image: lumen,
-    alt: "Lumen Clinic letterhead in soft mint and white photographed from above",
-    services: ["Identity", "Signage", "Environment"],
-    caseStudy: {
-      overview:
-        "Lumen is a two-chair clinic in Lekki. The brief came from a real problem: patients were cancelling appointments they had already paid for.",
-      challenge:
-        "The brand had to reduce dread. That is an environmental and behavioural problem before it is a graphic one.",
-      discovery:
-        "I sat in the waiting room across three afternoons. The stress points were the sound from the treatment room, an unclear check-in, and no sense of how long anything takes.",
-      strategy:
-        "Design for the waiting room first. Clear wayfinding, an honest visual timeline of each procedure, and a palette that avoids clinical white.",
-      logo: "A soft-cornered wordmark with an open aperture in the u — space, not a tooth. Deliberately unliteral.",
-      identity:
-        "Pale mint, warm white, and slate. Rounded geometry throughout, and an illustration style used only for procedure timelines.",
-      applications:
-        "Reception signage, appointment cards, procedure timeline posters, uniforms, and SMS reminder copy.",
-      outcome:
-        "The timeline posters turned out to be the highest-impact piece — patients could see the end of the appointment from the chair.",
-      results: [
-        { label: "Late cancellations", value: "-36%" },
-        { label: "Return bookings", value: "+24%" },
-        { label: "Touchpoints designed", value: "20" },
-      ],
-      lessons:
-        "Sitting in the room the work is for beats any amount of desk research.",
-    },
+    slug: "dausal",
+    name: "Dausal",
+    client: "Dausal",
+    description: "Website design and build for Dausal.",
+    category: "website",
+    year: "2025",
+    featured: true,
+    image: stride,
+    alt: "Phone and desktop screens showing the Dausal website",
+    services: ["Web design"],
+    url: "https://dausal.yusufmayowa.com",
   },
   {
     slug: "geowyse",
@@ -412,61 +423,67 @@ export const projects: Project[] = [
     year: "2025",
     image: geowyse,
     alt: "Laptop on a linen sofa showing the dark GeoWyse Consult website homepage",
-    services: ["Web design", "Copy structure", "Build"],
-    url: "https://example.com/geowyse",
-  },
-  {
-    slug: "aeris-studio",
-    name: "Aeris Studio",
-    client: "Aeris Studio",
-    description: "A typographic one-page site for a motion design studio.",
-    category: "website",
-    year: "2025",
-    image: aeris,
-    alt: "Laptop on a dark desk showing the Aeris Studio website with large white typography",
-    services: ["Web design", "Motion direction"],
-    url: "https://example.com/aeris",
-  },
-  {
-    slug: "harvest",
-    name: "Harvest",
-    client: "Harvest Agritech",
-    description: "A bright marketing site for an agricultural supply platform.",
-    category: "website",
-    year: "2024",
-    image: harvest,
-    alt: "Desktop monitor by a window showing the bright Harvest Agritech website",
-    services: ["Web design", "Design system"],
-    url: "https://example.com/harvest",
-  },
-  {
-    slug: "stride",
-    name: "Stride",
-    client: "Stride Fitness",
-    description: "A product-led landing page for a strength training app.",
-    category: "website",
-    year: "2024",
-    image: stride,
-    alt: "Two phones on a dark backdrop showing the Stride fitness app landing page",
-    services: ["Web design", "Product marketing"],
-    url: "https://example.com/stride",
-  },
-  {
-    slug: "folio",
-    name: "Folio",
-    client: "Folio Editorial",
-    description: "An editorial publishing site built around long-form reading.",
-    category: "website",
-    year: "2023",
-    image: folio,
-    alt: "Laptop and tablet on a white table showing the Folio editorial website",
-    services: ["Web design", "Typography system"],
-    url: "https://example.com/folio",
+    services: ["Web design", "Copy structure"],
+    url: "https://geowyse.yusufmayowa.com",
+    comingSoon: true,
   },
 ];
 
 export const brandingProjects = projects.filter((p) => p.category === "branding");
 export const websiteProjects = projects.filter((p) => p.category === "website");
+export const featuredBrandingProjects = brandingProjects.filter((p) => p.featured);
+export const featuredWebsiteProjects = websiteProjects.filter((p) => p.featured);
+export const spotlightBrandingProjects = featuredBrandingProjects.filter((p) => p.spotlight);
+export const spotlightWebsiteProjects = featuredWebsiteProjects.filter((p) => p.spotlight);
+
+/**
+ * Interleaves branding and website projects proportionally so a mixed view
+ * reads as one curated feed instead of two grouped blocks.
+ */
+function interleave(branding: Project[], website: Project[]): Project[] {
+  const groups: Record<Category, Project[]> = { branding, website };
+  const counts: Record<Category, number> = { branding: 0, website: 0 };
+  const totals: Record<Category, number> = { branding: branding.length, website: website.length };
+  const result: Project[] = [];
+
+  for (let i = 0; i < branding.length + website.length; i++) {
+    let best: Category | null = null;
+    let bestScore = Infinity;
+    for (const category of Object.keys(groups) as Category[]) {
+      if (counts[category] >= totals[category]) continue;
+      const score = (counts[category] + 1) / totals[category];
+      if (score < bestScore) {
+        bestScore = score;
+        best = category;
+      }
+    }
+    if (!best) break;
+    result.push(groups[best][counts[best]]);
+    counts[best] += 1;
+  }
+
+  return result;
+}
+
+export function getMixedProjects(): Project[] {
+  return interleave(brandingProjects, websiteProjects);
+}
+
+/**
+ * The 10 published projects (6 branding, 4 website) shown on the Works
+ * archive, interleaved so the grid reads as one curated feed.
+ */
+export function getFeaturedProjects(): Project[] {
+  return interleave(featuredBrandingProjects, featuredWebsiteProjects);
+}
+
+/**
+ * The 6 strongest projects (4 branding, 2 website) spotlighted on the
+ * homepage, interleaved so the grid reads as one curated feed.
+ */
+export function getSpotlightProjects(): Project[] {
+  return interleave(spotlightBrandingProjects, spotlightWebsiteProjects);
+}
 
 export function getProject(slug: string) {
   return projects.find((p) => p.slug === slug);
