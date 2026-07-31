@@ -51,10 +51,10 @@ import efficiencyLegalEnvelope from "@/assets/efficiency-legal-envelope.png";
 import alderStoneHero from "@/assets/alder-stone-hero.png";
 import alderStoneLogo from "@/assets/alder-stone-logo.png";
 import alderStoneColors from "@/assets/alder-stone-colors.png";
-import folio from "@/assets/work-folio.jpg";
-import aeris from "@/assets/work-aeris.jpg";
-import harvest from "@/assets/work-harvest.jpg";
-import stride from "@/assets/work-stride.jpg";
+import brReformerLaptop from "@/assets/br-reformer-laptop.webp";
+import localrankLaptop from "@/assets/localrank-laptop.webp";
+import mayaLaptop from "@/assets/maya-laptop.webp";
+import dausalLaptop from "@/assets/dausal-laptop.webp";
 import geowyse from "@/assets/work-geowyse.jpg";
 
 export type Category = "branding" | "website";
@@ -369,8 +369,8 @@ export const projects: Project[] = [
     year: "2026",
     featured: true,
     spotlight: true,
-    image: folio,
-    alt: "Laptop showing the BR Reformer Studios website homepage",
+    image: brReformerLaptop,
+    alt: "Laptop on an armchair showing the BR Reformer Studios website homepage",
     services: ["Web design", "Booking system"],
     url: "https://brreformerstudios.com",
   },
@@ -383,21 +383,21 @@ export const projects: Project[] = [
     year: "2025",
     featured: true,
     spotlight: true,
-    image: aeris,
-    alt: "Laptop on a dark desk showing the LocalRank website",
+    image: localrankLaptop,
+    alt: "Laptop on an armchair showing the LocalRank website homepage",
     services: ["Web design", "Product marketing"],
     url: "https://localrank.yusufmayowa.com",
   },
   {
     slug: "maya",
     name: "Maya",
-    client: "Maya",
-    description: "Website design and build for Maya.",
+    client: "Maya Luxe Homes",
+    description: "Website design and build for an interior design studio in Abuja.",
     category: "website",
     year: "2025",
     featured: true,
-    image: harvest,
-    alt: "Desktop monitor showing the Maya website",
+    image: mayaLaptop,
+    alt: "Laptop on an armchair showing the Maya Luxe Homes website homepage",
     services: ["Web design"],
     url: "https://maya.yusufmayowa.com",
   },
@@ -405,12 +405,12 @@ export const projects: Project[] = [
     slug: "dausal",
     name: "Dausal",
     client: "Dausal",
-    description: "Website design and build for Dausal.",
+    description: "A conversion-focused site for an auto repair and maintenance shop in Lagos.",
     category: "website",
     year: "2025",
     featured: true,
-    image: stride,
-    alt: "Phone and desktop screens showing the Dausal website",
+    image: dausalLaptop,
+    alt: "Laptop on an armchair showing the Dausal auto repair website homepage",
     services: ["Web design"],
     url: "https://dausal.yusufmayowa.com",
   },
