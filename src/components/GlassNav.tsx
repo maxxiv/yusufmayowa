@@ -149,7 +149,7 @@ export function GlassNav() {
                     <Link
                       to={l.to}
                       onClick={() => setOpen(false)}
-                      className="flex items-center gap-2 rounded-xl px-2 py-4 font-display text-2xl tracking-[-0.02em] text-ink transition-colors hover:bg-ink/5"
+                      className="flex items-center justify-between gap-2 rounded-xl px-2 py-4 font-display text-2xl tracking-[-0.02em] text-ink transition-colors hover:bg-ink/5"
                       activeProps={{ className: "text-accent" }}
                       activeOptions={{ exact: l.to === "/" }}
                     >
