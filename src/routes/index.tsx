@@ -6,6 +6,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { CTASection } from "@/components/CTASection";
 import { ProcessSection } from "@/components/ProcessSection";
+import { ArrowUpRight } from "@/components/ArrowUpRight";
 import portrait from "@/assets/portrait.jpg";
 
 const title = "Yusuf Mayowa | Brand Identity & Web Designer";
@@ -69,9 +70,10 @@ function Hero() {
       <motion.div {...line(0.4)} className="mt-10">
         <Link
           to="/contact"
-          className="inline-flex min-h-16 items-center rounded-full bg-ink px-12 text-lg font-medium text-paper transition-transform duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.97] md:min-h-20 md:px-14 md:text-xl"
+          className="inline-flex min-h-16 items-center gap-2 rounded-full bg-ink px-12 text-lg font-medium text-paper transition-transform duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.97] md:min-h-20 md:px-14 md:text-xl"
         >
           Work With Me
+          <ArrowUpRight className="size-5 md:size-6" />
         </Link>
       </motion.div>
     </section>
@@ -162,9 +164,10 @@ function Index() {
           <div className="mt-12 flex justify-center">
             <Link
               to="/works"
-              className="inline-flex min-h-16 items-center rounded-full border border-paper/20 px-12 text-lg font-medium text-paper transition-colors duration-200 hover:bg-paper/10 md:min-h-20 md:px-14 md:text-xl"
+              className="inline-flex min-h-16 items-center gap-2 rounded-full border border-paper/20 px-12 text-lg font-medium text-paper transition-colors duration-200 hover:bg-paper/10 md:min-h-20 md:px-14 md:text-xl"
             >
               View all projects
+              <ArrowUpRight className="size-5 md:size-6" />
             </Link>
           </div>
         </div>

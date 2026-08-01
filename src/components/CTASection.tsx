@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Reveal } from "./Reveal";
+import { ArrowUpRight } from "./ArrowUpRight";
 
 export function CTASection() {
   return (
@@ -14,9 +15,10 @@ export function CTASection() {
           </h2>
           <Link
             to="/contact"
-            className="mt-10 inline-flex min-h-12 items-center rounded-full bg-paper px-8 text-sm font-medium text-ink transition-transform duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.97]"
+            className="mt-10 inline-flex min-h-12 items-center gap-2 rounded-full bg-paper px-8 text-sm font-medium text-ink transition-transform duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.97]"
           >
             Work with me
+            <ArrowUpRight className="size-4" />
           </Link>
         </div>
       </Reveal>

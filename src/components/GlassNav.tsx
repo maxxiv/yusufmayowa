@@ -2,6 +2,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
 import { EASE } from "./Reveal";
+import { ArrowUpRight } from "./ArrowUpRight";
 import { site } from "@/data/site";
 
 const links = [
@@ -77,9 +78,10 @@ export function GlassNav() {
           <div className="flex items-center gap-2">
             <Link
               to="/contact"
-              className="hidden rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-paper transition-transform duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.03] active:scale-[0.97] md:inline-flex"
+              className="hidden items-center gap-1.5 rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-paper transition-transform duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.03] active:scale-[0.97] md:inline-flex"
             >
               Work with me
+              <ArrowUpRight className="size-3.5" />
             </Link>
             <button
               type="button"
@@ -147,11 +149,12 @@ export function GlassNav() {
                     <Link
                       to={l.to}
                       onClick={() => setOpen(false)}
-                      className="block rounded-xl px-2 py-4 font-display text-2xl tracking-[-0.02em] text-ink transition-colors hover:bg-ink/5"
+                      className="flex items-center gap-2 rounded-xl px-2 py-4 font-display text-2xl tracking-[-0.02em] text-ink transition-colors hover:bg-ink/5"
                       activeProps={{ className: "text-accent" }}
                       activeOptions={{ exact: l.to === "/" }}
                     >
                       {l.label}
+                      <ArrowUpRight className="size-4" />
                     </Link>
                   </motion.li>
                 ))}
@@ -169,9 +172,10 @@ export function GlassNav() {
                 <Link
                   to="/contact"
                   onClick={() => setOpen(false)}
-                  className="flex min-h-14 w-full items-center justify-center rounded-full bg-ink text-base font-medium text-paper transition-transform duration-200 active:scale-[0.97]"
+                  className="flex min-h-14 w-full items-center justify-center gap-2 rounded-full bg-ink text-base font-medium text-paper transition-transform duration-200 active:scale-[0.97]"
                 >
                   Work with me
+                  <ArrowUpRight className="size-4" />
                 </Link>
               </motion.div>
 

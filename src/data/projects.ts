@@ -1,4 +1,4 @@
-import mauveHero from "@/assets/mauve-hero-2.webp";
+import mauveThumbnail from "@/assets/mauve-thumbnail.webp";
 import mauveSketches from "@/assets/mauve-sketches.webp";
 import mauveTaglineTee from "@/assets/mauve-tagline-tee.webp";
 import mauveLogoMark from "@/assets/mauve-logo-mark.webp";
@@ -15,7 +15,7 @@ import fadHero from "@/assets/fad-hero.png";
 import fadBusinessCard from "@/assets/fad-businesscard.png";
 import fadSocial from "@/assets/fad-social.png";
 import fadTruck from "@/assets/fad-truck.png";
-import firmlogsHero from "@/assets/firmlogs-hero-2.webp";
+import firmlogsThumbnail from "@/assets/firmlogs-thumbnail.webp";
 import firmlogsSketches from "@/assets/firmlogs-sketches.webp";
 import firmlogsLogoWood from "@/assets/firmlogs-logo-wood.webp";
 import firmlogsPalette from "@/assets/firmlogs-palette.webp";
@@ -25,7 +25,7 @@ import firmlogsLaptop from "@/assets/firmlogs-laptop.webp";
 import firmlogsSignageLetterhead from "@/assets/firmlogs-signage-letterhead.webp";
 import firmlogsModel from "@/assets/firmlogs-model.webp";
 import firmlogsBedroomCabinet from "@/assets/firmlogs-bedroom-cabinet.webp";
-import nextgenHero from "@/assets/nextgen-hero-2.webp";
+import nextgenThumbnail from "@/assets/nextgen-thumbnail.webp";
 import nextgenSketches from "@/assets/nextgen-sketches.webp";
 import nextgenLogoMark from "@/assets/nextgen-logo-mark.webp";
 import nextgenPalette from "@/assets/nextgen-palette.webp";
@@ -102,8 +102,8 @@ export const projects: Project[] = [
     year: "2025",
     featured: true,
     spotlight: true,
-    image: mauveHero,
-    alt: "The Mauve wave-form logo mark glowing against a dark background",
+    image: mauveThumbnail,
+    alt: "Mauve tees on hangers with the pink wave-form logo overlaid",
     services: ["Brand strategy", "Identity", "Packaging"],
     caseStudy: {
       industry: "Activewear & Performance Apparel",
@@ -184,8 +184,8 @@ export const projects: Project[] = [
     year: "2024",
     featured: true,
     spotlight: true,
-    image: firmlogsHero,
-    alt: "Dark wood-panelled hallway with the Firmlogs Designs gold logo mark",
+    image: firmlogsThumbnail,
+    alt: "Dark walnut armchair with the Firmlogs Designs gold logo mark",
     services: ["Identity", "Brand guidelines", "Social assets"],
     caseStudy: {
       industry: "Furniture & Interior Design",
@@ -223,8 +223,8 @@ export const projects: Project[] = [
     year: "2024",
     featured: true,
     spotlight: true,
-    image: nextgenHero,
-    alt: "Next-Generation Builders logo and wordmark on a dark blue background",
+    image: nextgenThumbnail,
+    alt: "Model wearing a Next-Generation Builders branded cap",
     services: ["Identity", "Signage", "Print collateral"],
     caseStudy: {
       industry: "Construction & Real Estate Development",
