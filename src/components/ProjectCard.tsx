@@ -51,9 +51,6 @@ function CardBody({ project, priority }: { project: Project; priority?: boolean 
         </div>
 
         <h3 className="mt-4 font-display text-2xl text-white md:text-[1.75rem]">{project.name}</h3>
-        <p className="mt-1.5 max-w-sm text-sm leading-relaxed text-white/75">
-          {project.description}
-        </p>
       </div>
     </>
   );
@@ -61,7 +58,7 @@ function CardBody({ project, priority }: { project: Project; priority?: boolean 
 
 export function ProjectCard({ project, onExternal, priority }: ProjectCardProps) {
   const shell =
-    "group relative block aspect-[4/3] overflow-hidden rounded-[2rem] bg-ink shadow-soft transition-shadow duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-lift md:rounded-[2rem]";
+    "group relative block aspect-[5/4] overflow-hidden rounded-[2rem] bg-ink shadow-soft transition-shadow duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-lift md:rounded-[2rem]";
 
   if (project.category === "website") {
     return (

@@ -25,6 +25,60 @@ export const Route = createFileRoute("/about")({
   component: AboutPage,
 });
 
+const experience = [
+  {
+    role: "Contract Brand & Web Designer",
+    company: "BR Reformer Studios",
+    location: "London, UK",
+    period: "Nov 2025 – May 2026",
+    body: "Designed the logo and visual identity for a London-based reformer Pilates studio, then built and launched the site in WordPress and Elementor, including booking pages built for lead generation.",
+  },
+  {
+    role: "Graphic Designer",
+    company: "Iconic Resourcing",
+    location: "Remote – Scotland, UK",
+    period: "Feb 2025 – May 2026",
+    body: "Designed brochures, presentations, and social assets for recruitment and employer-branding campaigns, working closely with the marketing team to keep the visual brand consistent under tight deadlines.",
+  },
+  {
+    role: "Contract Brand Identity Designer",
+    company: "Amala On The Go",
+    location: "Toronto, Canada",
+    period: "Apr 2025",
+    body: "Built the logo and complete brand identity for a Nigerian food brand serving customers in Toronto, including guidelines covering typography, colour, and visual applications.",
+  },
+  {
+    role: "Freelance Brand Identity Designer",
+    company: "Self-Employed",
+    location: "",
+    period: "2021 – Present",
+    body: "Built brand identity systems for 15+ businesses across food, technology, lifestyle, and corporate sectors, leading each project from discovery through final delivery.",
+  },
+  {
+    role: "Contract Brand Identity Designer",
+    company: "Reedah's Pot",
+    location: "Abuja, Nigeria",
+    period: "Dec 2024",
+    body: "Designed the logo and visual identity for a food and catering business, working closely with the owner to establish a professional brand presence.",
+  },
+];
+
+const skills = [
+  "Brand Identity Design",
+  "Logo Design",
+  "Brand Guidelines",
+  "Corporate Stationery",
+  "Adobe Illustrator",
+  "Adobe Photoshop",
+  "WordPress (Elementor)",
+  "Social Media Design",
+  "Typography & Layout",
+  "Presentation Design",
+  "Visual Strategy",
+  "Figma",
+  "Canva",
+];
+
 function AboutPage() {
   return (
     <>
@@ -34,7 +88,7 @@ function AboutPage() {
             About
           </p>
           <h1 className="mt-5 max-w-[18ch] font-display text-[clamp(2.4rem,6.5vw,4.25rem)] leading-[1.05] font-bold">
-            I design brands that are easy to trust.
+            I'm Yusuf Mayowa
           </h1>
         </Reveal>
       </section>
@@ -57,32 +111,36 @@ function AboutPage() {
         <Reveal delay={0.08}>
           <div className="space-y-6 text-[1.0625rem] leading-[1.75] text-ink-soft">
             <p>
-              I didn't set out to become a designer. I started out just trying to make one small
-              business look like it deserved to be taken seriously. What kept me in it wasn't the
-              software or the aesthetics, it was watching how differently people treated the same
-              business once it looked like it knew what it was doing.
+              I'm Yusuf Mayowa, a Brand Identity and Website Designer who enjoys turning ideas
+              into brands people remember.
             </p>
             <p>
-              That's the thread that's run through everything since: good businesses that
-              couldn't yet explain themselves. The product was solid, the price was fair, and the
-              person across the table still didn't get it. Design became the bridge between what
-              a business actually offered and how people experienced it.
+              Over the last four years, I've worked with startups and growing businesses across
+              Nigeria, Canada, Australia, and the United Kingdom, helping them build visual
+              identities and websites that feel intentional, consistent, and built for growth.
+              Whether I'm creating a logo from scratch, designing a complete identity system, or
+              building a website in Figma and WordPress, my goal is always the same: create work
+              that solves real business problems while looking timeless.
             </p>
             <p>
-              I've spent most of my career freelancing, which sounds less stable than it is. What
-              it actually means is I've worked directly with founders instead of through the
-              layers of a bigger studio, people close enough to their own business to answer hard
-              questions on the spot, and small enough that a single brand decision still changes
-              something next week. A lot of that early work was with founders figuring things out
-              as they went, which taught me to design for decisions that hadn't been made yet, not
-              just the ones already locked in.
+              I've had the opportunity to work with brands like Iconic Resourcing in Scotland, BR
+              Reformer Studios in London, Amala On The Go in Toronto, alongside many ambitious
+              founders who trusted me to bring their vision to life. Every project has taught me
+              that good design isn't just about aesthetics. It's about clarity, strategy, and
+              giving people confidence in the businesses they build.
             </p>
             <p>
-              Somewhere in there, the work stopped staying local. I've since designed for clients
-              in Nigeria, the UK, Australia, and Canada, over video calls and shared drives
-              instead of studio meetings. Distance changes how you work, not what you deliver. If
-              anything, it forces you to be clearer, because there's no hallway conversation to
-              patch over a gap in the brief.
+              Outside of design, you'll probably find me reading books on self-development and
+              business, watching travel documentaries and imagining my next destination, or
+              catching a Manchester United match. Music is also a huge part of my creative
+              process. A good playlist has become an essential part of almost every project I work
+              on because it helps me focus and stay in the flow.
+            </p>
+            <p>
+              I believe the best brands are built with intention, not trends, and that's the
+              mindset I bring into every collaboration. Whether it's a startup finding its
+              identity or an established business looking to evolve, I enjoy creating work that
+              feels authentic, memorable, and built to last.
             </p>
           </div>
 
@@ -98,10 +156,94 @@ function AboutPage() {
         </Reveal>
       </section>
 
+      <section aria-labelledby="experience-heading" className="container-site section-y">
+        <Reveal>
+          <h2 id="experience-heading" className="font-display text-[clamp(1.75rem,4vw,2.75rem)]">
+            Experience
+          </h2>
+        </Reveal>
+        <div className="mt-12 flex flex-col gap-10 border-t border-ink/10 pt-10 md:gap-12 md:pt-12">
+          {experience.map((job, i) => (
+            <Reveal
+              key={job.role + job.company}
+              delay={i * 0.05}
+              className="grid gap-2 md:grid-cols-[14rem_1fr] md:gap-10"
+            >
+              <p className="text-[0.7rem] tracking-[0.14em] uppercase text-ink-faint">
+                {job.period}
+              </p>
+              <div>
+                <h3 className="font-display text-lg tracking-[-0.01em]">{job.role}</h3>
+                <p className="mt-1 text-sm text-ink-faint">
+                  {job.company}
+                  {job.location ? ` · ${job.location}` : ""}
+                </p>
+                <p className="mt-3 max-w-[60ch] text-[0.95rem] leading-[1.7] text-ink-soft">
+                  {job.body}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section aria-labelledby="education-heading" className="container-site section-y pt-0">
+        <Reveal>
+          <h2 id="education-heading" className="font-display text-[clamp(1.75rem,4vw,2.75rem)]">
+            Education
+          </h2>
+        </Reveal>
+        <div className="mt-12 flex flex-col gap-6 border-t border-ink/10 pt-10">
+          <Reveal className="grid gap-2 md:grid-cols-[14rem_1fr] md:gap-10">
+            <p className="text-[0.7rem] tracking-[0.14em] uppercase text-ink-faint">
+              Graduated 2024
+            </p>
+            <div>
+              <h3 className="font-display text-lg tracking-[-0.01em]">
+                B.Sc. (Ed) in Economics Education
+              </h3>
+              <p className="mt-1 text-sm text-ink-faint">
+                Adekunle Ajasin University, Akungba-Akoko
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delay={0.05} className="grid gap-2 md:grid-cols-[14rem_1fr] md:gap-10">
+            <p className="text-[0.7rem] tracking-[0.14em] uppercase text-ink-faint">
+              2025 – 2026
+            </p>
+            <div>
+              <h3 className="font-display text-lg tracking-[-0.01em]">
+                National Youth Service Corps (NYSC)
+              </h3>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section aria-labelledby="skills-heading" className="container-site section-y pt-0">
+        <Reveal>
+          <h2 id="skills-heading" className="font-display text-[clamp(1.75rem,4vw,2.75rem)]">
+            Skills & Expertise
+          </h2>
+        </Reveal>
+        <Reveal delay={0.06}>
+          <div className="mt-10 flex flex-wrap gap-2.5 border-t border-ink/10 pt-10">
+            {skills.map((skill) => (
+              <span
+                key={skill}
+                className="rounded-full border border-ink/12 px-4 py-2 text-sm text-ink-soft"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </Reveal>
+      </section>
+
       <section aria-labelledby="philosophy-heading" className="container-site section-y">
         <Reveal>
           <h2 id="philosophy-heading" className="font-display text-[clamp(1.75rem,4vw,2.75rem)]">
-            How I think about the work
+            Design Philosophy
           </h2>
         </Reveal>
         <Reveal delay={0.06}>
@@ -118,14 +260,6 @@ function AboutPage() {
               one argument well, and get out of the way of the person trying to decide whether to
               trust you. The identity and the website should feel like the same decision made
               twice, not two separate projects that happen to share a logo.
-            </p>
-            <p>
-              The industries change more than the process does. I've built identities for
-              furniture and interior studios, construction and real estate firms, an activewear
-              label, a food brand, a logistics company, a legal practice, and a fashion label, and
-              built websites for a Pilates studio, an SEO platform, and a geotechnical
-              consultancy. What stays the same is the question I start with: what does this
-              business already do well that nobody can see yet?
             </p>
             <p>
               I'll disagree with you sometimes, in writing, with a reason. I'd rather have that

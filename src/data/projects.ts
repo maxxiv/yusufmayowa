@@ -1,8 +1,13 @@
-import mauveFullLook from "@/assets/mauve-full-look.png";
-import mauveShirtDetail from "@/assets/mauve-shirt-detail.png";
-import mauveCap from "@/assets/mauve-cap.png";
-import mauveTee from "@/assets/mauve-tee.png";
-import mauveBag from "@/assets/mauve-bag.png";
+import mauveHero from "@/assets/mauve-hero-2.webp";
+import mauveSketches from "@/assets/mauve-sketches.webp";
+import mauveTaglineTee from "@/assets/mauve-tagline-tee.webp";
+import mauveLogoMark from "@/assets/mauve-logo-mark.webp";
+import mauveLogoVariations from "@/assets/mauve-logo-variations.webp";
+import mauvePalette from "@/assets/mauve-palette.webp";
+import mauveShortsTee from "@/assets/mauve-shorts-tee.webp";
+import mauveCapHoodie from "@/assets/mauve-cap-hoodie.webp";
+import mauveBagHangers from "@/assets/mauve-bag-hangers.webp";
+import mauvePattern from "@/assets/mauve-pattern.webp";
 import amalaHero from "@/assets/amala-hero.png";
 import amalaLogo from "@/assets/amala-logo.png";
 import amalaColors from "@/assets/amala-colors.png";
@@ -51,10 +56,10 @@ import efficiencyLegalEnvelope from "@/assets/efficiency-legal-envelope.png";
 import alderStoneHero from "@/assets/alder-stone-hero.png";
 import alderStoneLogo from "@/assets/alder-stone-logo.png";
 import alderStoneColors from "@/assets/alder-stone-colors.png";
-import brReformerLaptop from "@/assets/br-reformer-laptop.webp";
-import localrankLaptop from "@/assets/localrank-laptop.webp";
-import mayaLaptop from "@/assets/maya-laptop.webp";
-import dausalLaptop from "@/assets/dausal-laptop.webp";
+import brReformerMockup from "@/assets/br-reformer-mockup.webp";
+import localrankMockup from "@/assets/localrank-mockup.webp";
+import mayaMockup from "@/assets/maya-mockup.webp";
+import dausalMockup from "@/assets/dausal-mockup.webp";
 import geowyse from "@/assets/work-geowyse.jpg";
 
 export type Category = "branding" | "website";
@@ -96,8 +101,8 @@ export const projects: Project[] = [
     category: "branding",
     year: "2025",
     featured: true,
-    image: mauveFullLook,
-    alt: "Model wearing full Mauve activewear look: black shorts, branded socks, and trainers",
+    image: mauveHero,
+    alt: "The Mauve wave-form logo mark glowing against a dark background",
     services: ["Brand strategy", "Identity", "Packaging"],
     caseStudy: {
       industry: "Activewear & Performance Apparel",
@@ -106,8 +111,24 @@ export const projects: Project[] = [
       challenge:
         "Activewear is crowded with brands shouting logos across the chest. Mauve needed to feel premium and minimal, closer to fashion than sportswear, without losing performance credibility.",
       solution:
-        "A soft custom wordmark and a small geometric mark discreet enough to sit on a hem or a sock, a lavender-and-black palette that reads as premium rather than sporty, and packaging considered enough to be part of the product.",
-      gallery: [mauveShirtDetail, mauveCap, mauveTee, mauveBag],
+        "A wave-form 'M' mark abstracted from motion, paired with a dusty, mauve-led palette pulled from the brand's own name, and a wordmark built with soft, rounded geometry that stays confident at the size of a hem tag.",
+      designExploration: mauveSketches,
+      logoConcept: {
+        image: mauveLogoMark,
+        note: "The mark is a repeating wave, three connected strokes reading as an M while suggesting motion and rhythm, simple enough to work stitched, embroidered, or printed at any scale.",
+      },
+      colorPalette: {
+        image: mauvePalette,
+        note: "Deep Plum, Lavender Mist, Dusty Rose, and Misty Blue, a palette that traces back to the mauve dye first drawn from the mallow plant.",
+      },
+      gallery: [
+        mauveTaglineTee,
+        mauveLogoVariations,
+        mauveShortsTee,
+        mauveCapHoodie,
+        mauveBagHangers,
+        mauvePattern,
+      ],
     },
   },
   {
@@ -369,8 +390,8 @@ export const projects: Project[] = [
     year: "2026",
     featured: true,
     spotlight: true,
-    image: brReformerLaptop,
-    alt: "Laptop on an armchair showing the BR Reformer Studios website homepage",
+    image: brReformerMockup,
+    alt: "Laptop on a purple couch showing the BR Reformer Studios website homepage",
     services: ["Web design", "Booking system"],
     url: "https://brreformerstudios.com",
   },
@@ -383,8 +404,8 @@ export const projects: Project[] = [
     year: "2025",
     featured: true,
     spotlight: true,
-    image: localrankLaptop,
-    alt: "Laptop on an armchair showing the LocalRank website homepage",
+    image: localrankMockup,
+    alt: "Laptop on someone's lap showing the LocalRank website homepage",
     services: ["Web design", "Product marketing"],
     url: "https://localrank.yusufmayowa.com",
   },
@@ -396,8 +417,8 @@ export const projects: Project[] = [
     category: "website",
     year: "2025",
     featured: true,
-    image: mayaLaptop,
-    alt: "Laptop on an armchair showing the Maya Luxe Homes website homepage",
+    image: mayaMockup,
+    alt: "Laptop on a burnt-orange chair showing the Maya Luxe Homes website homepage",
     services: ["Web design"],
     url: "https://maya.yusufmayowa.com",
   },
@@ -409,8 +430,8 @@ export const projects: Project[] = [
     category: "website",
     year: "2025",
     featured: true,
-    image: dausalLaptop,
-    alt: "Laptop on an armchair showing the Dausal auto repair website homepage",
+    image: dausalMockup,
+    alt: "Laptop on a dark table showing the Dausal auto repair website homepage",
     services: ["Web design"],
     url: "https://dausal.yusufmayowa.com",
   },

@@ -65,6 +65,15 @@ function Hero() {
           <span className="text-accent">Brands</span> with their Audience
         </motion.span>
       </h1>
+
+      <motion.div {...line(0.4)} className="mt-10">
+        <Link
+          to="/contact"
+          className="inline-flex min-h-12 items-center rounded-full bg-ink px-8 text-sm font-medium text-paper transition-transform duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.97]"
+        >
+          Work With Me
+        </Link>
+      </motion.div>
     </section>
   );
 }
@@ -102,18 +111,10 @@ function About() {
         <Reveal delay={0.1}>
           <div className="space-y-6 text-[1.0625rem] leading-[1.75] text-ink-soft">
             <p>
-              I'm Yusuf, a brand identity and website designer helping businesses look as credible
-              as the work they already do.
-            </p>
-            <p>
-              I design visual identities and websites that make brands easier to trust, easier to
-              remember, and easier to choose. Whether it's building a new identity from scratch or
-              redesigning an existing one, every decision is made with the people you're trying to
-              reach in mind.
-            </p>
-            <p>
-              I believe good design isn't decoration. It's clarity. When people immediately
-              understand who you are and why they should trust you, design has done its job.
+              I'm Yusuf Mayowa, a Brand Identity and Website Designer helping startups and growing
+              businesses build brands that people remember and trust. I create thoughtful visual
+              identities and websites that combine strategy, clarity, and timeless design, working
+              with clients across Nigeria and internationally to bring ambitious ideas to life.
             </p>
           </div>
 
@@ -129,13 +130,6 @@ function About() {
               </div>
             ))}
           </dl>
-
-          <Link
-            to="/about"
-            className="mt-8 inline-flex min-h-11 items-center rounded-full border border-ink/12 px-6 text-sm font-medium text-ink transition-colors duration-200 hover:bg-ink/5"
-          >
-            More about me
-          </Link>
         </Reveal>
       </div>
     </section>
@@ -177,7 +171,7 @@ function Index() {
       </section>
 
       <About />
-      <ProcessSection title="Design Process" />
+      <ProcessSection title="My Design Process" />
       <Testimonials />
 
       <section aria-labelledby="faq-heading" className="container-site section-y">
