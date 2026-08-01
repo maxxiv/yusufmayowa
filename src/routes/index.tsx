@@ -47,7 +47,7 @@ function Hero() {
             <motion.span
               className="size-2 rounded-full bg-accent"
               animate={reduced ? undefined : { opacity: [1, 0.4, 1], scale: [1, 0.85, 1] }}
-              transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+              transition={{ duration: 1.3, repeat: Infinity, ease: "easeInOut" }}
             />
           </span>
           Brand & Website Designer
@@ -69,7 +69,7 @@ function Hero() {
       <motion.div {...line(0.4)} className="mt-10">
         <Link
           to="/contact"
-          className="inline-flex min-h-12 items-center rounded-full bg-ink px-8 text-sm font-medium text-paper transition-transform duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.97]"
+          className="inline-flex min-h-16 items-center rounded-full bg-ink px-12 text-lg font-medium text-paper transition-transform duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.97] md:min-h-20 md:px-14 md:text-xl"
         >
           Work With Me
         </Link>
@@ -162,7 +162,7 @@ function Index() {
           <div className="mt-12 flex justify-center">
             <Link
               to="/works"
-              className="inline-flex min-h-11 items-center rounded-full border border-paper/20 px-6 text-sm font-medium text-paper transition-colors duration-200 hover:bg-paper/10"
+              className="inline-flex min-h-16 items-center rounded-full border border-paper/20 px-12 text-lg font-medium text-paper transition-colors duration-200 hover:bg-paper/10 md:min-h-20 md:px-14 md:text-xl"
             >
               View all projects
             </Link>

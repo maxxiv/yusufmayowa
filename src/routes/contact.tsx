@@ -53,15 +53,17 @@ function ContactPage() {
             </span>
           </a>
           <a
-            href={`tel:${site.phone.replace(/\s/g, "")}`}
+            href={`https://wa.me/${site.phone.replace(/\D/g, "")}?text=${encodeURIComponent("Hi Yusuf, coming from your website, I need a design for my brand.")}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group bg-background p-8 transition-colors duration-300 hover:bg-ink/[0.03] md:p-10"
           >
-            <p className="text-xs text-ink-faint">Phone</p>
+            <p className="text-xs text-ink-faint">WhatsApp</p>
             <p className="mt-2 font-display text-xl tracking-[-0.02em] md:text-2xl">
               {site.phone}
             </p>
             <span className="mt-4 inline-block text-sm text-ink-soft transition-transform duration-300 group-hover:translate-x-1">
-              Call or WhatsApp →
+              Message on WhatsApp →
             </span>
           </a>
         </div>
@@ -69,7 +71,6 @@ function ContactPage() {
 
       <Reveal delay={0.16}>
         <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3">
-          <span className="text-sm text-ink-faint">Elsewhere</span>
           {site.socials.map((s) => (
             <a
               key={s.label}

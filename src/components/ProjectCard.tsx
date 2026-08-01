@@ -58,7 +58,7 @@ function CardBody({ project, priority }: { project: Project; priority?: boolean 
 
 export function ProjectCard({ project, onExternal, priority }: ProjectCardProps) {
   const shell =
-    "group relative block aspect-[5/4] overflow-hidden rounded-[2rem] bg-ink shadow-soft transition-shadow duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-lift md:rounded-[2rem]";
+    "group relative block aspect-[4/5] overflow-hidden rounded-[2rem] bg-ink shadow-soft transition-shadow duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-lift sm:aspect-[5/4] md:rounded-[2rem]";
 
   if (project.category === "website") {
     return (

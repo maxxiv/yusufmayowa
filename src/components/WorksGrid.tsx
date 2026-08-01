@@ -64,7 +64,7 @@ export function WorksGrid({
           ref={tabsRef}
           role="tablist"
           aria-label="Filter projects by type"
-          className="glass flex max-w-full gap-1 overflow-x-auto rounded-full p-1.5"
+          className="glass flex max-w-full gap-0.5 overflow-x-auto rounded-full p-1.5 sm:gap-1"
         >
           {tabs.map((tab, i) => {
             const active = filter === tab.id;
@@ -77,7 +77,7 @@ export function WorksGrid({
                 tabIndex={active ? 0 : -1}
                 onKeyDown={(e) => onKeyNav(e, i)}
                 onClick={() => setFilter(tab.id)}
-                className="relative min-h-11 shrink-0 rounded-full px-5 text-sm transition-colors duration-200"
+                className="relative min-h-11 shrink-0 rounded-full px-3 text-xs transition-colors duration-200 sm:px-5 sm:text-sm"
               >
                 {active && (
                   <motion.span
@@ -89,13 +89,13 @@ export function WorksGrid({
                   />
                 )}
                 <span
-                  className={`relative flex items-center gap-2 ${
+                  className={`relative flex items-center gap-1 sm:gap-2 ${
                     active ? "font-medium text-paper" : "text-ink-soft"
                   }`}
                 >
                   {tab.label}
                   <span
-                    className={`grid h-5 min-w-5 place-items-center rounded-full px-1 text-[0.68rem] ${
+                    className={`grid h-4 min-w-4 place-items-center rounded-full px-1 text-[0.62rem] sm:h-5 sm:min-w-5 sm:text-[0.68rem] ${
                       active ? "bg-paper/20 text-paper" : "bg-ink/8 text-ink-soft"
                     }`}
                   >
